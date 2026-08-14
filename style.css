@@ -1,0 +1,709 @@
+/* ==========================================================================
+   TINH HÀ 776C77 — DREAMY CELESTIAL ARCHIVE
+   style.css viết lại toàn bộ theo đúng className hiện có trong:
+   Navbar.js / SearchFilter.js / CharacterCard.js / FeaturedSection.js / main.js
+   ========================================================================== */
+
+/* ==========================================================================
+   0. GOOGLE FONTS — Noto Serif hỗ trợ đầy đủ dấu tiếng Việt
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
+
+/* ==========================================================================
+   1. RESET / VARIABLES
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+:root, [data-theme="dark"] {
+  /* Nền */
+  --bg-main: #0d0b11;
+  --bg-card: #141118;
+  --bg-card-hover: #17131c;
+  --bg-navbar: rgba(13, 11, 17, 0.82);
+  --bg-input: rgba(255, 255, 255, 0.04);
+  --bg-badge: rgba(119, 108, 119, 0.14);
+  --bg-badge-hover: rgba(119, 108, 119, 0.30);
+
+  /* Border */
+  --border-color: rgba(119, 108, 119, 0.30);
+  --border-hover: rgba(160, 145, 160, 0.5);
+
+  /* Chữ */
+  --text-main: #f2eef2;
+  --text-muted: #aaa2ad;
+  --text-dim: #6e6573;
+
+  /* Accent */
+  --accent: #776c77;
+  --accent-glow: rgba(119, 108, 119, 0.35);
+  --accent-hover: #8d7f8d;
+  --btn-bg: #776c77;
+  --btn-hover: #8d7f8d;
+
+  /* Đổ bóng */
+  --shadow-card: 0 8px 28px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 18px rgba(119, 108, 119, 0.22);
+
+  /* Sao */
+  --star-color: 255, 255, 255;
+  --star-opacity-max: 0.9;
+  --sky-glow: rgba(119, 108, 119, 0.06);
+}
+
+[data-theme="light"] {
+  /* Nền — bình minh */
+  --bg-main: #f6f3f1;
+  --bg-card: #f8f5f8;
+  --bg-card-hover: #fdfbfd;
+  --bg-navbar: rgba(246, 243, 241, 0.82);
+  --bg-input: rgba(119, 108, 119, 0.05);
+  --bg-badge: rgba(119, 108, 119, 0.08);
+  --bg-badge-hover: rgba(119, 108, 119, 0.18);
+
+  --border-color: rgba(119, 108, 119, 0.25);
+  --border-hover: rgba(119, 108, 119, 0.45);
+
+  --text-main: #2a242c;
+  --text-muted: #6b5f6e;
+  --text-dim: #948c97;
+
+  --accent: #776c77;
+  --accent-glow: rgba(119, 108, 119, 0.18);
+  --accent-hover: #635863;
+  --btn-bg: #776c77;
+  --btn-hover: #635863;
+
+  --shadow-card: 0 4px 18px rgba(60, 50, 60, 0.08);
+  --shadow-glow: 0 0 14px rgba(119, 108, 119, 0.15);
+
+  --star-color: 119, 108, 119;
+  --star-opacity-max: 0.35;
+  --sky-glow: rgba(119, 108, 119, 0.04);
+}
+
+/* Fonts & radius dùng chung cho cả 2 theme */
+:root {
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-serif: "Noto Serif", Georgia, "Times New Roman", Times, serif;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 9999px;
+}
+
+/* ==========================================================================
+   2. BODY
+   ========================================================================== */
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.6;
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+  position: relative;
+}
+
+a { color: inherit; text-decoration: none; }
+
+button, input {
+  font-family: inherit;
+  border: none;
+  outline: none;
+  background: none;
+  color: inherit;
+}
+
+img { max-width: 100%; }
+
+/* ==========================================================================
+   3. UTILITY / LAYOUT HELPERS
+   (các class tiện ích được dùng trực tiếp trong JS — không đổi tên)
+   ========================================================================== */
+.font-serif { font-family: var(--font-serif); }
+
+.text-center { text-align: center; }
+.text-sm { font-size: 0.875rem; }
+.text-2xl { font-size: 1.5rem; }
+.tracking-wide { letter-spacing: 0.025em; }
+
+.flex { display: flex; }
+.inline-flex { display: inline-flex; }
+.flex-col { flex-direction: column; }
+.flex-wrap { flex-wrap: wrap; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+
+.relative { position: relative; }
+.absolute { position: absolute; }
+.inset-0 { top: 0; right: 0; bottom: 0; left: 0; }
+.pointer-events-none { pointer-events: none; }
+
+.opacity-20 { opacity: 0.2; }
+.z-10 { z-index: 10; }
+
+.w-full { width: 100%; }
+.h-full { height: 100%; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+
+.max-w-4xl { max-width: 56rem; }
+.max-w-5xl { max-width: 64rem; }
+.max-w-\[320px\] { max-width: 320px; }
+.max-w-\[300px\] { max-width: 300px; }
+
+.scale-105 { transform: scale(1.05); }
+
+.gap-2 { gap: 0.5rem; }
+.gap-4 { gap: 1rem; }
+.gap-6 { gap: 1.5rem; }
+.gap-8 { gap: 2rem; }
+
+.px-4 { padding-left: 1rem; padding-right: 1rem; }
+.py-16 { padding-top: 4rem; padding-bottom: 4rem; }
+.mb-8 { margin-bottom: 2rem; }
+.mb-12 { margin-bottom: 3rem; }
+.mt-3 { margin-top: 0.75rem; }
+
+.space-y-2 > * + * { margin-top: 0.5rem; }
+.space-y-4 > * + * { margin-top: 1rem; }
+.space-y-6 > * + * { margin-top: 1.5rem; }
+
+.text-\[\#776C77\] { color: #776c77; }
+.text-\[var\(--text-main\)\] { color: var(--text-main); }
+.text-\[var\(--text-muted\)\] { color: var(--text-muted); }
+
+@media (min-width: 768px) {
+  .md\:flex-nowrap { flex-wrap: nowrap; }
+}
+
+main {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 6rem 1.5rem 3rem 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ==========================================================================
+   4. BACKGROUND — BẦU TRỜI SAO
+   ========================================================================== */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Lớp sao nhỏ, thưa */
+body::before {
+  background-image:
+    radial-gradient(1px 1px at 8% 12%, rgba(var(--star-color), var(--star-opacity-max)) 0, transparent 100%),
+    radial-gradient(1px 1px at 22% 68%, rgba(var(--star-color), 0.7) 0, transparent 100%),
+    radial-gradient(1px 1px at 37% 24%, rgba(var(--star-color), 0.6) 0, transparent 100%),
+    radial-gradient(1px 1px at 52% 82%, rgba(var(--star-color), 0.8) 0, transparent 100%),
+    radial-gradient(1px 1px at 63% 15%, rgba(var(--star-color), 0.6) 0, transparent 100%),
+    radial-gradient(1px 1px at 74% 55%, rgba(var(--star-color), 0.7) 0, transparent 100%),
+    radial-gradient(1px 1px at 85% 30%, rgba(var(--star-color), 0.55) 0, transparent 100%),
+    radial-gradient(1px 1px at 93% 72%, rgba(var(--star-color), 0.7) 0, transparent 100%),
+    radial-gradient(1px 1px at 15% 90%, rgba(var(--star-color), 0.5) 0, transparent 100%),
+    radial-gradient(1px 1px at 45% 45%, rgba(var(--star-color), 0.5) 0, transparent 100%);
+  background-repeat: repeat;
+  background-size: 100% 100%;
+  animation: twinkle 7s ease-in-out infinite alternate;
+}
+
+/* Lớp vài ngôi sao lớn hơn, glow rất nhẹ */
+body::after {
+  background-image:
+    radial-gradient(1.6px 1.6px at 18% 20%, rgba(var(--star-color), var(--star-opacity-max)) 0%, rgba(var(--star-color), 0.15) 60%, transparent 100%),
+    radial-gradient(1.6px 1.6px at 68% 12%, rgba(var(--star-color), var(--star-opacity-max)) 0%, rgba(var(--star-color), 0.15) 60%, transparent 100%),
+    radial-gradient(2px 2px at 82% 62%, rgba(var(--star-color), var(--star-opacity-max)) 0%, rgba(var(--star-color), 0.15) 60%, transparent 100%),
+    radial-gradient(1.6px 1.6px at 30% 78%, rgba(var(--star-color), var(--star-opacity-max)) 0%, rgba(var(--star-color), 0.15) 60%, transparent 100%),
+    radial-gradient(1200px 700px at 50% -10%, var(--sky-glow) 0%, transparent 60%);
+  animation: twinkle 9s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes twinkle {
+  0%   { opacity: 0.65; }
+  50%  { opacity: 1; }
+  100% { opacity: 0.65; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before, body::after { animation: none; }
+}
+
+/* ==========================================================================
+   5. NAVBAR
+   ========================================================================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4.25rem;
+  z-index: 1000;
+  background: var(--bg-navbar);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+}
+
+.nav-container {
+  max-width: 1240px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.nav-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--text-main);
+  z-index: 2;
+  transition: opacity 0.2s ease;
+}
+
+.nav-logo:hover { opacity: 0.85; }
+
+.logo-icon { color: var(--accent); }
+.logo-text { white-space: nowrap; }
+
+/* Cụm 3 nút — căn giữa tuyệt đối theo tâm navbar, không theo khoảng trống còn lại */
+.nav-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: var(--bg-badge);
+  padding: 0.3rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-color);
+  z-index: 1;
+}
+
+.nav-item {
+  padding: 0.45rem 1.25rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-item:hover { color: var(--text-main); background: var(--accent-glow); }
+
+.nav-item.active {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  z-index: 2;
+}
+
+.theme-toggle-btn {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  background: var(--bg-badge);
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.theme-toggle-btn:hover {
+  background: var(--bg-badge-hover);
+  border-color: var(--border-hover);
+  transform: scale(1.05);
+}
+
+.theme-toggle-btn:focus-visible,
+.nav-item:focus-visible,
+.nav-logo:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   6. HERO
+   ========================================================================== */
+.hero-title {
+  font-size: 2.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--text-main);
+  text-shadow: var(--shadow-glow);
+}
+
+/* ==========================================================================
+   7. SECTION HEADINGS (dùng chung cho "Tinh tú nổi bật" & "Thư viện Tinh Hà")
+   ========================================================================== */
+main h2.font-serif {
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+#star-count {
+  font-family: var(--font-sans);
+}
+
+/* ==========================================================================
+   8. FEATURED SECTION
+   ========================================================================== */
+#tinh-tu svg line {
+  stroke: var(--accent);
+}
+
+/* ==========================================================================
+   9. CHARACTER CARD
+   ========================================================================== */
+.char-card {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  min-height: 350px;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.char-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-hover);
+  background: var(--bg-card-hover);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.28);
+}
+
+.card-accent-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.char-card:hover .card-accent-line { opacity: 1; }
+
+/* Tên & ID — ghi đè inline style tối thiểu để đạt đúng tỉ lệ trong bản thiết kế */
+.char-card h3.font-serif {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: var(--text-main) !important;
+  line-height: 1.25;
+}
+
+.char-card > div > div > p {
+  font-size: 11px !important;
+  letter-spacing: 0.06em !important;
+}
+
+/* Mô tả / trích dẫn */
+.char-card > p {
+  font-family: var(--font-serif) !important;
+  font-size: 13px !important;
+  font-style: italic;
+  line-height: 1.45 !important;
+  color: var(--text-muted) !important;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   10. AVATAR
+   ========================================================================== */
+.avatar-ring {
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
+  min-height: 56px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  background: var(--bg-badge);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-ring img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* ==========================================================================
+   11. TAGS
+   ========================================================================== */
+.badge-btn {
+  display: inline-block;
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-color);
+  background: var(--bg-badge);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.badge-btn:hover {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+}
+
+.badge-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   12. BUTTONS (Khám phá + divider phía trên)
+   ========================================================================== */
+.card-footer-single {
+  margin-top: auto;
+  padding-top: 1.1rem;
+  border-top: 1px solid rgba(119, 108, 119, 0.22);
+}
+
+.btn-explore {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 52px;
+  border-radius: 8px;
+  background: var(--btn-bg);
+  color: #ffffff !important;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-explore:hover {
+  background: var(--btn-hover);
+  box-shadow: 0 4px 14px var(--accent-glow);
+  transform: translateY(-1px);
+}
+
+.btn-explore:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   13. SEARCH
+   ========================================================================== */
+.search-filter-container,
+#search-filter-wrapper {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.search-box {
+  width: 100%;
+  position: relative;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 0.8rem 1.25rem 0.8rem 2.75rem;
+  border-radius: var(--radius-pill);
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-box input::placeholder { color: var(--text-dim); }
+
+.search-box input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   14. FILTERS
+   ========================================================================== */
+.tags-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.filter-tag-btn {
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  background: transparent;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.filter-tag-btn:hover {
+  background: var(--accent-glow);
+  color: var(--text-main);
+}
+
+.filter-tag-btn.active {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+}
+
+.filter-tag-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   15. LIBRARY GRID
+   ========================================================================== */
+.grid, #library-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .grid, #library-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .grid, #library-grid { grid-template-columns: repeat(3, 1fr); gap: 28px; }
+}
+
+@media (min-width: 1600px) {
+  main { max-width: 1400px; }
+  .grid, #library-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* ==========================================================================
+   16. FOOTER
+   ========================================================================== */
+footer {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  border-top: 1px solid var(--border-color);
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  margin-top: 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ==========================================================================
+   17. RESPONSIVE
+   ========================================================================== */
+@media (max-width: 768px) {
+  main { padding-top: 5.5rem; }
+
+  .hero-title { font-size: 1.9rem; }
+
+  .nav-logo .logo-text { display: none; }
+
+  .nav-center {
+    gap: 0.15rem;
+    padding: 0.25rem;
+  }
+
+  .nav-item {
+    padding: 0.35rem 0.7rem;
+    font-size: 0.75rem;
+  }
+
+  .char-card { padding: 22px; }
+
+  .avatar-ring {
+    width: 64px;
+    height: 64px;
+    min-width: 64px;
+    min-height: 64px;
+  }
+
+  #tinh-tu svg { display: none; }
+}
+
+@media (max-width: 480px) {
+  .nav-container { padding: 0 1rem; }
+}
+
+/* Chống tràn ngang tuyệt đối */
+html, body { max-width: 100%; overflow-x: hidden; }
+
+/* ==========================================================================
+   18. ACCESSIBILITY
+   ========================================================================== */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-contrast: more) {
+  :root, [data-theme="dark"] { --border-color: rgba(119, 108, 119, 0.6); }
+  [data-theme="light"] { --border-color: rgba(119, 108, 119, 0.55); }
+}

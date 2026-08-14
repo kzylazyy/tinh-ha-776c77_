@@ -1,0 +1,20 @@
+[
+  {
+    "id": "char-001",
+    "name": "Lâm Sơ Yến",
+    "avatar": "/avatars/lam-so-yen.png",
+    "tags": ["Cbiz", "Drama", "Hiện đại", "Ngọt ngào", "Sủng"],
+    "quote": "Kẻ cầm lái biết cách thưởng thức những con sóng ngầm...",
+    "prompt_link": "https://aistudio.google.com/...",
+    "clicks": 0
+  },
+  {
+    "id": "char-002",
+    "name": "Tạ Thừa",
+    "avatar": "/avatars/ta-thua.png",
+    "tags": ["Ngốc", "Drama", "Hiện đại", "Ngọt ngào", "Sủng"],
+    "quote": "Dì ơi, dì nghịch đất với con đi!!",
+    "prompt_link": "https://aistudio.google.com/...",
+    "clicks": 0
+  }
+]
