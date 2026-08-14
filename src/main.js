@@ -26,6 +26,51 @@ function getUniqueTags() {
   return Array.from(tagsSet);
 }
 
+// Danh sách gợi ý cho ô search: tên nhân vật + tất cả các tag (kể cả tag không nổi bật)
+function getSuggestionPool() {
+  const pool = new Set();
+  characters.forEach(char => {
+    if (char.name) pool.add(char.name);
+    let charTags = [];
+    if (Array.isArray(char.tags)) {
+      charTags = char.tags;
+    } else if (typeof char.tags === 'string') {
+      charTags = char.tags.split('#').filter(t => t.trim() !== '');
+    }
+    charTags.forEach(tag => pool.add(tag.trim()));
+  });
+  return Array.from(pool);
+}
+
+function renderSuggestions(query) {
+  const box = document.getElementById('search-suggestions');
+  if (!box) return;
+
+  const q = (query || '').toLowerCase().trim();
+  if (!q) {
+    box.innerHTML = '';
+    box.classList.remove('active');
+    return;
+  }
+
+  const matches = getSuggestionPool()
+    .filter(item => item.toLowerCase().includes(q))
+    .slice(0, 6);
+
+  if (matches.length === 0) {
+    box.innerHTML = '';
+    box.classList.remove('active');
+    return;
+  }
+
+  box.innerHTML = matches.map(item => `
+    <div class="suggestion-item" onmousedown="window.selectSuggestion('${item.replace(/'/g, "\\'")}')">
+      ${item}
+    </div>
+  `).join('');
+  box.classList.add('active');
+}
+
 function applyTheme(theme) {
   currentTheme = theme;
   localStorage.setItem('theme', theme);
@@ -95,6 +140,7 @@ function renderLibrary() {
   }
 }
 
+// Bấm vào tag trên thanh filter (chỉ áp dụng cho các tag nổi bật) -> lọc chính xác
 window.filterByTag = function(tag) {
   currentTag = tag;
   const filterContainer = document.getElementById('search-filter-wrapper');
@@ -107,9 +153,58 @@ window.filterByTag = function(tag) {
   renderLibrary();
 };
 
+// Bấm vào tag trên card nhân vật -> điền vào ô search và tự tìm kiếm
+// (không dùng bộ lọc tag chính xác, vì tag này có thể không nằm trong nhóm "nổi bật")
+window.searchByTag = function(tag) {
+  currentTag = 'Tất cả';
+  searchQuery = tag;
+
+  const filterContainer = document.getElementById('search-filter-wrapper');
+  if (filterContainer) {
+    filterContainer.innerHTML = SearchFilter(getUniqueTags(), currentTag);
+  }
+  const searchInput = document.getElementById('search-input');
+  if (searchInput) searchInput.value = searchQuery;
+
+  renderLibrary();
+
+  const searchSection = document.getElementById('tim-kiem');
+  if (searchSection) searchSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+};
+
 window.handleSearch = function(value) {
   searchQuery = value;
   renderLibrary();
+  renderSuggestions(value);
+};
+
+window.showSuggestions = function(value) {
+  renderSuggestions(value);
+};
+
+window.hideSuggestionsDelayed = function() {
+  // delay để onmousedown của gợi ý kịp chạy trước khi box bị ẩn bởi onblur
+  setTimeout(() => {
+    const box = document.getElementById('search-suggestions');
+    if (box) {
+      box.innerHTML = '';
+      box.classList.remove('active');
+    }
+  }, 150);
+};
+
+window.selectSuggestion = function(value) {
+  searchQuery = value;
+  const input = document.getElementById('search-input');
+  if (input) input.value = value;
+
+  renderLibrary();
+
+  const box = document.getElementById('search-suggestions');
+  if (box) {
+    box.innerHTML = '';
+    box.classList.remove('active');
+  }
 };
 
 function initApp() {

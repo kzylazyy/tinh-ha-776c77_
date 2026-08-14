@@ -13,9 +13,9 @@ export function CharacterCard(char) {
     const cleanTag = tag.trim();
     return `
       <button 
-        onclick="window.filterByTag('${cleanTag}')" 
+        onclick="window.searchByTag('${cleanTag}')" 
         class="badge badge-btn"
-        title="Lọc theo tag #${cleanTag}"
+        title="Tìm kiếm theo tag #${cleanTag}"
       >
         #${cleanTag.toUpperCase()}
       </button>
