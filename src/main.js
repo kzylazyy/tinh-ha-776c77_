@@ -56,14 +56,27 @@ function syncClearButton() {
   if (btn) btn.style.display = searchQuery ? 'flex' : 'none';
 }
 
+function toggleSearchOverlay(show) {
+  const overlay = document.getElementById('search-overlay');
+  if (overlay) overlay.classList.toggle('active', show);
+}
+
+window.closeSuggestions = function() {
+  const box = document.getElementById('search-suggestions');
+  if (box) {
+    box.innerHTML = '';
+    box.classList.remove('active');
+  }
+  toggleSearchOverlay(false);
+};
+
 function renderSuggestions(query) {
   const box = document.getElementById('search-suggestions');
   if (!box) return;
 
   const q = (query || '').toLowerCase().trim();
   if (!q) {
-    box.innerHTML = '';
-    box.classList.remove('active');
+    window.closeSuggestions();
     return;
   }
 
@@ -72,8 +85,7 @@ function renderSuggestions(query) {
     .slice(0, 6);
 
   if (matches.length === 0) {
-    box.innerHTML = '';
-    box.classList.remove('active');
+    window.closeSuggestions();
     return;
   }
 
@@ -84,6 +96,7 @@ function renderSuggestions(query) {
     </div>
   `).join('');
   box.classList.add('active');
+  toggleSearchOverlay(true);
 }
 
 function applyTheme(theme) {
@@ -213,11 +226,7 @@ window.clearSearch = function() {
 window.hideSuggestionsDelayed = function() {
   // delay để onmousedown của gợi ý kịp chạy trước khi box bị ẩn bởi onblur
   setTimeout(() => {
-    const box = document.getElementById('search-suggestions');
-    if (box) {
-      box.innerHTML = '';
-      box.classList.remove('active');
-    }
+    window.closeSuggestions();
   }, 150);
 };
 
@@ -228,12 +237,7 @@ window.selectSuggestion = function(value) {
 
   renderLibrary();
   syncClearButton();
-
-  const box = document.getElementById('search-suggestions');
-  if (box) {
-    box.innerHTML = '';
-    box.classList.remove('active');
-  }
+  window.closeSuggestions();
 };
 
 function initApp() {

@@ -19,28 +19,33 @@ export function SearchFilter(availableTags, currentTag = 'Tất cả', currentQu
   }).join('');
 
   return `
+    <!-- Lớp phủ nền, làm nổi khối tìm kiếm khi gợi ý đang mở -->
+    <div id="search-overlay" class="search-overlay" onmousedown="window.closeSuggestions()"></div>
+
     <div class="search-filter-container">
-      <!-- Search Input Box -->
-      <div class="search-box" style="position: relative;">
-        <span class="search-icon">⌕</span>
-        <input 
-          type="text" 
-          id="search-input" 
-          autocomplete="off"
-          value="${currentQuery ? currentQuery.replace(/"/g, '&quot;') : ''}"
-          placeholder="Tìm kiếm một vì sao, nhân vật, tag..." 
-          oninput="window.handleSearch(this.value)"
-          onfocus="window.showSuggestions(this.value)"
-          onblur="window.hideSuggestionsDelayed()"
-        />
-        <button 
-          type="button" 
-          id="search-clear" 
-          class="search-clear-btn" 
-          onmousedown="window.clearSearch()"
-          style="display: ${currentQuery ? 'flex' : 'none'};"
-          aria-label="Xoá tìm kiếm"
-        >✕</button>
+      <!-- Search Input Box + Gợi ý: gộp thành 1 khối liền -->
+      <div class="search-combo">
+        <div class="search-box">
+          <span class="search-icon">⌕</span>
+          <input 
+            type="text" 
+            id="search-input" 
+            autocomplete="off"
+            value="${currentQuery ? currentQuery.replace(/"/g, '&quot;') : ''}"
+            placeholder="Tìm kiếm một vì sao, nhân vật, tag..." 
+            oninput="window.handleSearch(this.value)"
+            onfocus="window.showSuggestions(this.value)"
+            onblur="window.hideSuggestionsDelayed()"
+          />
+          <button 
+            type="button" 
+            id="search-clear" 
+            class="search-clear-btn" 
+            onmousedown="window.clearSearch()"
+            style="display: ${currentQuery ? 'flex' : 'none'};"
+            aria-label="Xoá tìm kiếm"
+          >✕</button>
+        </div>
         <div id="search-suggestions" class="search-suggestions"></div>
       </div>
       
