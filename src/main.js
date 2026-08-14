@@ -26,20 +26,32 @@ function getUniqueTags() {
   return Array.from(tagsSet);
 }
 
-// Danh sách gợi ý cho ô search: tên nhân vật + tất cả các tag (kể cả tag không nổi bật)
+// Danh sách gợi ý cho ô search: nhân vật (kèm avatar, CHAR-ID) + tag (kể cả tag không nổi bật)
 function getSuggestionPool() {
-  const pool = new Set();
+  const pool = [];
+  const seenTags = new Set();
+
   characters.forEach(char => {
-    if (char.name) pool.add(char.name);
+    if (char.name) {
+      pool.push({ type: 'character', label: char.name, id: char.id, avatar: char.avatar });
+    }
     let charTags = [];
     if (Array.isArray(char.tags)) {
       charTags = char.tags;
     } else if (typeof char.tags === 'string') {
       charTags = char.tags.split('#').filter(t => t.trim() !== '');
     }
-    charTags.forEach(tag => pool.add(tag.trim()));
+    charTags.forEach(tag => {
+      const clean = tag.trim();
+      const key = clean.toLowerCase();
+      if (clean && !seenTags.has(key)) {
+        seenTags.add(key);
+        pool.push({ type: 'tag', label: clean });
+      }
+    });
   });
-  return Array.from(pool);
+
+  return pool;
 }
 
 function highlightMatch(text, query) {
@@ -56,10 +68,7 @@ function syncClearButton() {
   if (btn) btn.style.display = searchQuery ? 'flex' : 'none';
 }
 
-function toggleSearchOverlay(show) {
-  const overlay = document.getElementById('search-overlay');
-  if (overlay) overlay.classList.toggle('active', show);
-}
+const MAX_SUGGESTIONS = 7;
 
 window.closeSuggestions = function() {
   const box = document.getElementById('search-suggestions');
@@ -67,7 +76,12 @@ window.closeSuggestions = function() {
     box.innerHTML = '';
     box.classList.remove('active');
   }
-  toggleSearchOverlay(false);
+};
+
+window.showAllResults = function() {
+  window.closeSuggestions();
+  const librarySection = document.getElementById('thu-vien');
+  if (librarySection) librarySection.scrollIntoView({ behavior: 'smooth', block: 'start' });
 };
 
 function renderSuggestions(query) {
@@ -80,23 +94,60 @@ function renderSuggestions(query) {
     return;
   }
 
-  const matches = getSuggestionPool()
-    .filter(item => item.toLowerCase().includes(q))
-    .slice(0, 6);
+  const allMatches = getSuggestionPool().filter(item => item.label.toLowerCase().includes(q));
 
-  if (matches.length === 0) {
-    window.closeSuggestions();
+  if (allMatches.length === 0) {
+    box.innerHTML = `
+      <div class="search-empty">
+        <span class="search-empty-icon">✧</span>
+        <span class="search-empty-title">Không tìm thấy vì sao này</span>
+        <span class="search-empty-sub">Tín hiệu không tồn tại trong Tinh Hà.</span>
+      </div>
+    `;
+    box.classList.add('active');
     return;
   }
 
-  box.innerHTML = matches.map(item => `
-    <div class="suggestion-item" onmousedown="window.selectSuggestion('${item.replace(/'/g, "\\'")}')">
-      <span class="suggestion-icon">✦</span>
-      <span class="suggestion-text">${highlightMatch(item, q)}</span>
-    </div>
-  `).join('');
+  const shown = allMatches.slice(0, MAX_SUGGESTIONS);
+
+  const itemsHTML = shown.map(item => {
+    const safeValue = item.label.replace(/'/g, "\\'");
+
+    if (item.type === 'character') {
+      return `
+        <div class="search-result-item" onmousedown="window.selectSuggestion('${safeValue}')">
+          <div class="search-result-avatar">
+            <img src="${item.avatar || '/avatars/default.png'}" alt="${item.label}" />
+          </div>
+          <div class="search-result-info">
+            <span class="search-result-name">${highlightMatch(item.label, q)}</span>
+            <span class="search-result-id">${(item.id || '').toUpperCase()}</span>
+          </div>
+        </div>
+      `;
+    }
+
+    return `
+      <div class="search-result-item" onmousedown="window.selectSuggestion('${safeValue}')">
+        <div class="search-result-avatar">#</div>
+        <div class="search-result-info">
+          <span class="search-result-name">${highlightMatch(item.label, q)}</span>
+          <span class="search-result-id">Tag</span>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  const viewAllHTML = allMatches.length > MAX_SUGGESTIONS
+    ? `<div class="search-view-all" onmousedown="window.showAllResults()">Xem tất cả ${allMatches.length} kết quả →</div>`
+    : '';
+
+  box.innerHTML = `
+    <div class="search-dropdown-label">Kết quả tìm kiếm</div>
+    ${itemsHTML}
+    ${viewAllHTML}
+  `;
   box.classList.add('active');
-  toggleSearchOverlay(true);
 }
 
 function applyTheme(theme) {

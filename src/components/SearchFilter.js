@@ -11,7 +11,7 @@ export function SearchFilter(availableTags, currentTag = 'Tất cả', currentQu
     return `
       <button 
         onclick="window.filterByTag('${tag}')" 
-        class="filter-tag-btn ${isActive ? 'active' : ''}"
+        class="filter-pill ${isActive ? 'active' : ''}"
       >
         ${tag}
       </button>
@@ -19,20 +19,17 @@ export function SearchFilter(availableTags, currentTag = 'Tất cả', currentQu
   }).join('');
 
   return `
-    <!-- Lớp phủ nền, làm nổi khối tìm kiếm khi gợi ý đang mở -->
-    <div id="search-overlay" class="search-overlay" onmousedown="window.closeSuggestions()"></div>
-
-    <div class="search-filter-container">
-      <!-- Search Input Box + Gợi ý: gộp thành 1 khối liền -->
+    <div class="search-section">
       <div class="search-combo">
         <div class="search-box">
           <span class="search-icon">⌕</span>
           <input 
             type="text" 
             id="search-input" 
+            class="search-input"
             autocomplete="off"
             value="${currentQuery ? currentQuery.replace(/"/g, '&quot;') : ''}"
-            placeholder="Tìm kiếm một vì sao, nhân vật, tag..." 
+            placeholder="Tìm một vì sao..." 
             oninput="window.handleSearch(this.value)"
             onfocus="window.showSuggestions(this.value)"
             onblur="window.hideSuggestionsDelayed()"
@@ -40,17 +37,18 @@ export function SearchFilter(availableTags, currentTag = 'Tất cả', currentQu
           <button 
             type="button" 
             id="search-clear" 
-            class="search-clear-btn" 
+            class="search-clear" 
             onmousedown="window.clearSearch()"
             style="display: ${currentQuery ? 'flex' : 'none'};"
             aria-label="Xoá tìm kiếm"
           >✕</button>
         </div>
-        <div id="search-suggestions" class="search-suggestions"></div>
+
+        <div id="search-suggestions" class="search-dropdown"></div>
       </div>
-      
+
       <!-- Filter Tags (chỉ hiện tag nổi bật) -->
-      <div class="tags-wrapper">
+      <div class="search-filters">
         ${tagsHTML}
       </div>
     </div>
