@@ -11,10 +11,19 @@
   {
     "id": "char-002",
     "name": "Tạ Thừa",
-    "avatar": "/avatars/ta-thua.png",
+    "avatar": "/avatars/lam-so-yen.png",
     "tags": ["Ngốc", "Drama", "Hiện đại", "Ngọt ngào", "Sủng"],
     "quote": "Dì ơi, dì nghịch đất với con đi!!",
     "prompt_link": "https://aistudio.google.com/...",
+    "clicks": 0
+  },
+  {
+    "id": "char-003",
+    "name": "Cố Vãn Thanh",
+    "avatar": "/avatars/lam-so-yen.png",
+    "tags": ["Alpha", "Ngược Luyến", "Hôn Nhân Hợp Đồng", "Tổng Tài"],
+    "quote": "Một alpha cấp S lạnh lùng, che giấu sự tổn thương tinh thần sau hợp đồng hôn nhân thương mại.",
+    "prompt_link": "#",
     "clicks": 0
   }
 ]
