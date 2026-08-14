@@ -383,10 +383,8 @@ main h2.font-serif {
 
 /* ==========================================================================
    8. FEATURED SECTION
+   (đã chuyển sang bố cục hàng ngang — không còn dùng SVG đường nối chòm sao)
    ========================================================================== */
-#tinh-tu svg line {
-  stroke: var(--accent);
-}
 
 /* ==========================================================================
    9. CHARACTER CARD
@@ -684,8 +682,6 @@ footer {
     min-width: 64px;
     min-height: 64px;
   }
-
-  #tinh-tu svg { display: none; }
 }
 
 @media (max-width: 480px) {
