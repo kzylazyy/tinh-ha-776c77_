@@ -42,6 +42,20 @@ function getSuggestionPool() {
   return Array.from(pool);
 }
 
+function highlightMatch(text, query) {
+  const idx = text.toLowerCase().indexOf(query.toLowerCase());
+  if (idx === -1) return text;
+  const before = text.slice(0, idx);
+  const match = text.slice(idx, idx + query.length);
+  const after = text.slice(idx + query.length);
+  return `${before}<u>${match}</u>${after}`;
+}
+
+function syncClearButton() {
+  const btn = document.getElementById('search-clear');
+  if (btn) btn.style.display = searchQuery ? 'flex' : 'none';
+}
+
 function renderSuggestions(query) {
   const box = document.getElementById('search-suggestions');
   if (!box) return;
@@ -65,7 +79,8 @@ function renderSuggestions(query) {
 
   box.innerHTML = matches.map(item => `
     <div class="suggestion-item" onmousedown="window.selectSuggestion('${item.replace(/'/g, "\\'")}')">
-      ${item}
+      <span class="suggestion-icon">✦</span>
+      <span class="suggestion-text">${highlightMatch(item, q)}</span>
     </div>
   `).join('');
   box.classList.add('active');
@@ -145,7 +160,7 @@ window.filterByTag = function(tag) {
   currentTag = tag;
   const filterContainer = document.getElementById('search-filter-wrapper');
   if (filterContainer) {
-    filterContainer.innerHTML = SearchFilter(getUniqueTags(), currentTag);
+    filterContainer.innerHTML = SearchFilter(getUniqueTags(), currentTag, searchQuery);
   }
   const searchInput = document.getElementById('search-input');
   if (searchInput) searchInput.value = searchQuery;
@@ -161,7 +176,7 @@ window.searchByTag = function(tag) {
 
   const filterContainer = document.getElementById('search-filter-wrapper');
   if (filterContainer) {
-    filterContainer.innerHTML = SearchFilter(getUniqueTags(), currentTag);
+    filterContainer.innerHTML = SearchFilter(getUniqueTags(), currentTag, searchQuery);
   }
   const searchInput = document.getElementById('search-input');
   if (searchInput) searchInput.value = searchQuery;
@@ -176,10 +191,23 @@ window.handleSearch = function(value) {
   searchQuery = value;
   renderLibrary();
   renderSuggestions(value);
+  syncClearButton();
 };
 
 window.showSuggestions = function(value) {
   renderSuggestions(value);
+};
+
+window.clearSearch = function() {
+  searchQuery = '';
+  const input = document.getElementById('search-input');
+  if (input) {
+    input.value = '';
+    input.focus();
+  }
+  renderLibrary();
+  renderSuggestions('');
+  syncClearButton();
 };
 
 window.hideSuggestionsDelayed = function() {
@@ -199,6 +227,7 @@ window.selectSuggestion = function(value) {
   if (input) input.value = value;
 
   renderLibrary();
+  syncClearButton();
 
   const box = document.getElementById('search-suggestions');
   if (box) {
@@ -229,7 +258,7 @@ function initApp() {
       <!-- Khu vực Tìm kiếm -->
       <section id="tim-kiem" style="padding-top: 2rem; scroll-margin-top: 5rem;">
         <div id="search-filter-wrapper">
-          ${SearchFilter(getUniqueTags(), currentTag)}
+          ${SearchFilter(getUniqueTags(), currentTag, searchQuery)}
         </div>
       </section>
 

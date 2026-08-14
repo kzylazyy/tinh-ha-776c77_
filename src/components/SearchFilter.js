@@ -5,7 +5,7 @@
 // chúng chỉ hiện trên card nhân vật, bấm vào sẽ tự động điền vào ô search.
 const FEATURED_TAGS = ['Tất cả', 'Hiện đại', 'Cổ đại', 'Tu tiên', 'ABO', 'Học đường'];
 
-export function SearchFilter(availableTags, currentTag = 'Tất cả') {
+export function SearchFilter(availableTags, currentTag = 'Tất cả', currentQuery = '') {
   const tagsHTML = FEATURED_TAGS.map(tag => {
     const isActive = tag === currentTag;
     return `
@@ -27,11 +27,20 @@ export function SearchFilter(availableTags, currentTag = 'Tất cả') {
           type="text" 
           id="search-input" 
           autocomplete="off"
+          value="${currentQuery ? currentQuery.replace(/"/g, '&quot;') : ''}"
           placeholder="Tìm kiếm một vì sao, nhân vật, tag..." 
           oninput="window.handleSearch(this.value)"
           onfocus="window.showSuggestions(this.value)"
           onblur="window.hideSuggestionsDelayed()"
         />
+        <button 
+          type="button" 
+          id="search-clear" 
+          class="search-clear-btn" 
+          onmousedown="window.clearSearch()"
+          style="display: ${currentQuery ? 'flex' : 'none'};"
+          aria-label="Xoá tìm kiếm"
+        >✕</button>
         <div id="search-suggestions" class="search-suggestions"></div>
       </div>
       
