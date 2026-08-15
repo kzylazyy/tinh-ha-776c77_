@@ -10,6 +10,7 @@ import './utils/tracker.js';
 let characters = initialCharacters || [];
 let currentTag = 'Tất cả';
 let searchQuery = '';
+let sortMode = 'default';
 let currentTheme = localStorage.getItem('theme') || 'dark';
 
 function getUniqueTags() {
@@ -143,7 +144,7 @@ function renderSuggestions(query) {
     : '';
 
   box.innerHTML = `
-    <div class="search-dropdown-label">Kết quả tìm kiếm</div>
+    <div class="search-autocomplete-label">Kết quả tìm kiếm</div>
     ${itemsHTML}
     ${viewAllHTML}
   `;
@@ -179,7 +180,7 @@ function initTheme() {
 }
 
 function getFilteredCharacters() {
-  return characters.filter(char => {
+  const filtered = characters.filter(char => {
     let charTags = [];
     if (Array.isArray(char.tags)) {
       charTags = char.tags;
@@ -196,6 +197,14 @@ function getFilteredCharacters() {
     
     return matchesTag && matchesSearch;
   });
+
+  const sorted = [...filtered];
+  if (sortMode === 'name-asc') {
+    sorted.sort((a, b) => a.name.localeCompare(b.name, 'vi'));
+  } else if (sortMode === 'likes-desc') {
+    sorted.sort((a, b) => (b.likes || 0) - (a.likes || 0));
+  }
+  return sorted;
 }
 
 function renderLibrary() {
@@ -204,6 +213,15 @@ function renderLibrary() {
   const filtered = getFilteredCharacters();
 
   if (countEl) countEl.textContent = `${filtered.length} vì sao`;
+
+  const statusLabelEl = document.getElementById('search-status-label');
+  if (statusLabelEl) {
+    statusLabelEl.textContent = `Đang xem: ${currentTag === 'Tất cả' ? 'tất cả nhóm' : currentTag}`;
+  }
+  const statusCountEl = document.getElementById('search-status-count');
+  if (statusCountEl) {
+    statusCountEl.textContent = `${filtered.length} / ${characters.length} nhân vật`;
+  }
 
   if (container) {
     if (filtered.length === 0) {
@@ -224,7 +242,7 @@ window.filterByTag = function(tag) {
   currentTag = tag;
   const filterContainer = document.getElementById('search-filter-wrapper');
   if (filterContainer) {
-    filterContainer.innerHTML = SearchFilter(getUniqueTags(), currentTag, searchQuery);
+    filterContainer.innerHTML = SearchFilter(getUniqueTags(), currentTag, searchQuery, sortMode, characters.length, getFilteredCharacters().length);
   }
   const searchInput = document.getElementById('search-input');
   if (searchInput) searchInput.value = searchQuery;
@@ -240,7 +258,7 @@ window.searchByTag = function(tag) {
 
   const filterContainer = document.getElementById('search-filter-wrapper');
   if (filterContainer) {
-    filterContainer.innerHTML = SearchFilter(getUniqueTags(), currentTag, searchQuery);
+    filterContainer.innerHTML = SearchFilter(getUniqueTags(), currentTag, searchQuery, sortMode, characters.length, getFilteredCharacters().length);
   }
   const searchInput = document.getElementById('search-input');
   if (searchInput) searchInput.value = searchQuery;
@@ -249,6 +267,39 @@ window.searchByTag = function(tag) {
 
   const searchSection = document.getElementById('tim-kiem');
   if (searchSection) searchSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+};
+
+// Đổi cách sắp xếp danh sách (chỉ ảnh hưởng thứ tự hiển thị, không đổi logic lọc/tìm kiếm)
+window.setSortMode = function(value) {
+  sortMode = value;
+  renderLibrary();
+};
+
+// Đặt lại toàn bộ: tag, từ khóa tìm kiếm, sắp xếp
+window.resetSearch = function() {
+  currentTag = 'Tất cả';
+  searchQuery = '';
+  sortMode = 'default';
+
+  const filterContainer = document.getElementById('search-filter-wrapper');
+  if (filterContainer) {
+    filterContainer.innerHTML = SearchFilter(getUniqueTags(), currentTag, searchQuery, sortMode, characters.length, getFilteredCharacters().length);
+  }
+  window.closeSuggestions();
+  renderLibrary();
+};
+
+// Chọn ngẫu nhiên 1 nhân vật trong toàn bộ thư viện và mở đúng theo logic mở nhân vật hiện có
+window.pickRandomCharacter = function() {
+  if (!characters.length) return;
+  const randomChar = characters[Math.floor(Math.random() * characters.length)];
+
+  if (randomChar.prompt_link && randomChar.prompt_link !== '#') {
+    window.open(randomChar.prompt_link, '_blank');
+  }
+  if (typeof window.trackClick === 'function') {
+    window.trackClick(randomChar.id);
+  }
 };
 
 window.handleSearch = function(value) {
@@ -313,7 +364,7 @@ function initApp() {
       <!-- Khu vực Tìm kiếm -->
       <section id="tim-kiem" style="padding-top: 2rem; scroll-margin-top: 5rem;">
         <div id="search-filter-wrapper">
-          ${SearchFilter(getUniqueTags(), currentTag, searchQuery)}
+          ${SearchFilter(getUniqueTags(), currentTag, searchQuery, sortMode, characters.length, getFilteredCharacters().length)}
         </div>
       </section>
 
