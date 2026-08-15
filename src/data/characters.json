@@ -1,29 +1,11 @@
 [
   {
-    "id": "char-001",
-    "name": "Lâm Sơ Yến",
-    "avatar": "/avatars/lam-so-yen.png",
-    "tags": ["Cbiz", "Drama", "Hiện đại", "Ngọt ngào", "Sủng"],
-    "quote": "Kẻ cầm lái biết cách thưởng thức những con sóng ngầm...",
-    "prompt_link": "https://aistudio.google.com/...",
-    "clicks": 0
-  },
-  {
-    "id": "char-002",
-    "name": "Tạ Thừa",
-    "avatar": "/avatars/lam-so-yen.png",
-    "tags": ["Ngốc", "Drama", "Hiện đại", "Ngọt ngào", "Sủng"],
-    "quote": "Dì ơi, dì nghịch đất với con đi!!",
-    "prompt_link": "https://aistudio.google.com/...",
-    "clicks": 0
-  },
-  {
-    "id": "char-003",
-    "name": "Cố Vãn Thanh",
-    "avatar": "/avatars/lam-so-yen.png",
-    "tags": ["Alpha", "Ngược Luyến", "Hôn Nhân Hợp Đồng", "Tổng Tài"],
-    "quote": "Một alpha cấp S lạnh lùng, che giấu sự tổn thương tinh thần sau hợp đồng hôn nhân thương mại.",
-    "prompt_link": "#",
+    "id": "Nữ chính nguyên tác",
+    "name": "Tạ Vãn Ninh",
+    "avatar": "/avatars/ta-van-ninh.png",
+    "tags": ["Hiện đại","ABO","Chữa lành","Slow-burn","Xuyên sách", "Omega", "Tra A"],
+    "quote": "Cô có thể chi phối tất cả, trừ trái tim tôi.",
+    "prompt_link": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221POZ1rZJdu7kh59UaJqGP-SJZf6WkPII1%22%5D,%22action%22:%22open%22,%22userId%22:%22107479115693142787223%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing",
     "clicks": 0
   }
 ]
