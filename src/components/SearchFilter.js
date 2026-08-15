@@ -1,12 +1,13 @@
 // src/components/SearchFilter.js
 
-// Filter pill hiển thị nhanh bên dưới (theo yêu cầu thiết kế mới)
-const FEATURED_TAGS = ['Tất cả', 'WLW', 'Hiện đại', 'Cổ trang', 'AOB'];
+// Filter pill hiển thị nhanh bên dưới
+const FEATURED_TAGS = ['Tất cả', 'Hiện đại', 'Cổ đại', 'Tu tiên', 'Xuyên không', 'ABO'];
 
+// "Mặc định" là trạng thái ban đầu (giữ thứ tự gốc), 2 lựa chọn sắp xếp thật sự là A→Z và Z→A
 const SORT_OPTIONS = [
   { value: 'default', label: 'Mặc định' },
-  { value: 'name-asc', label: 'Tên A–Z' },
-  { value: 'likes-desc', label: 'Lượt thích nhiều nhất' },
+  { value: 'name-asc', label: 'A → Z' },
+  { value: 'name-desc', label: 'Z → A' },
 ];
 
 export function SearchFilter(
@@ -63,8 +64,8 @@ export function SearchFilter(
           value="${currentQuery ? currentQuery.replace(/"/g, '&quot;') : ''}"
           placeholder="Tìm nhân vật theo tên, tag, mô tả..." 
           oninput="window.handleSearch(this.value)"
-          onfocus="window.showSuggestions(this.value)"
-          onblur="window.hideSuggestionsDelayed()"
+          onfocus="window.showSuggestions(this.value); window.setSearchFocus(true)"
+          onblur="window.hideSuggestionsDelayed(); window.setSearchFocus(false)"
         />
         <button 
           type="button" 
