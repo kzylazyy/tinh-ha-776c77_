@@ -53,8 +53,8 @@ export function SearchFilter(
 
   return `
     <div class="search-container">
-      <!-- Ô tìm kiếm -->
-      <div class="search-input-wrapper">
+      <!-- Thanh tìm kiếm — MỘT khung duy nhất chứa icon + input + nút xoá -->
+      <div class="search-bar">
         <span class="search-icon">⌕</span>
         <input 
           type="text" 
@@ -64,8 +64,8 @@ export function SearchFilter(
           value="${currentQuery ? currentQuery.replace(/"/g, '&quot;') : ''}"
           placeholder="Tìm nhân vật theo tên, tag, mô tả..." 
           oninput="window.handleSearch(this.value)"
-          onfocus="window.showSuggestions(this.value); window.setSearchFocus(true)"
-          onblur="window.hideSuggestionsDelayed(); window.setSearchFocus(false)"
+          onfocus="window.showSuggestions(this.value)"
+          onblur="window.hideSuggestionsDelayed()"
         />
         <button 
           type="button" 

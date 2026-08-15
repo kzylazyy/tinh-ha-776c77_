@@ -69,13 +69,6 @@ function syncClearButton() {
   if (btn) btn.style.display = searchQuery ? 'flex' : 'none';
 }
 
-// Chỉ 1 khung viền duy nhất (search-container) được sáng lên khi ô tìm kiếm có focus —
-// không áp đồng thời hiệu ứng lên wrapper bên trong.
-window.setSearchFocus = function(isFocused) {
-  const container = document.querySelector('.search-container');
-  if (container) container.classList.toggle('search-focused', isFocused);
-};
-
 const MAX_SUGGESTIONS = 7;
 
 window.closeSuggestions = function() {
