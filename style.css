@@ -550,8 +550,7 @@ main h2.font-serif {
   --sf-muted: #9C96A5;
   --sf-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
 
-  /* Chỉ là layout wrapper (canh giữa + khoảng cách) — KHÔNG có border/nền/box-shadow
-     riêng, để không tạo ra "khung lớn bên ngoài" cạnh tranh với .search-bar bên dưới. */
+  /* TẦNG 1: khung ngoài lớn — bao bọc search bar + hàng control + hàng tag + dòng trạng thái. */
   width: 100%;
   max-width: 760px;
   margin: 0 auto;
@@ -559,10 +558,10 @@ main h2.font-serif {
   display: flex;
   flex-direction: column;
   gap: 1.1rem;
-  background: transparent;
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
+  background: var(--sf-surface);
+  border: 1px solid var(--sf-border);
+  border-radius: 24px;
+  box-shadow: var(--sf-shadow);
 }
 
 [data-theme="light"] .search-container {
@@ -576,9 +575,9 @@ main h2.font-serif {
 }
 
 /* ---------------- Thanh tìm kiếm ----------------
-   Đây là KHUNG DUY NHẤT của khu vực search: 1 border, 1 background, 1 border-radius.
-   icon / input / nút X đều nằm trực tiếp bên trong, không có wrapper con nào khác
-   có border/nền/box-shadow riêng. */
+   TẦNG 2: khung riêng của search bar, nằm bên trong khung ngoài ở trên.
+   icon / input / nút X nằm trực tiếp bên trong, không có wrapper con nào khác
+   có border/nền/box-shadow riêng — tuyệt đối không có tầng 3. */
 .search-bar {
   position: relative;
   display: flex;
@@ -618,6 +617,7 @@ main h2.font-serif {
   outline: none !important;
   box-shadow: none !important;
   background: transparent !important;
+  border-radius: 0 !important;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -632,6 +632,7 @@ main h2.font-serif {
   outline: none !important;
   box-shadow: none !important;
   background: transparent !important;
+  border-radius: 0 !important;
 }
 
 .search-input::placeholder { color: var(--sf-muted); }
