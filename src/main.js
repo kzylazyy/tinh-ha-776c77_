@@ -6,6 +6,9 @@ import { SearchFilter } from './components/SearchFilter.js';
 import { CharacterCard } from './components/CharacterCard.js';
 import initialCharacters from './data/characters.json';
 import './utils/tracker.js';
+import { inject } from '@vercel/analytics';
+
+inject();
 
 let characters = initialCharacters || [];
 let currentTag = 'Tất cả';
