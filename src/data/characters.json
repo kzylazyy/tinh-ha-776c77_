@@ -5,7 +5,16 @@
     "avatar": "/avatars/ta-van-ninh.png",
     "tags": ["Hiện đại","ABO","Chữa lành","Slow-burn","Xuyên không", "Omega", "Tra A"],
     "quote": "Cô có thể chi phối tất cả, trừ trái tim tôi.",
-    "prompt_link": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221POZ1rZJdu7kh59UaJqGP-SJZf6WkPII1%22%5D,%22action%22:%22open%22,%22userId%22:%22107479115693142787223%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing",
+    "prompt_link": "https://aistudio.google.com/prompts/1POZ1rZJdu7kh59UaJqGP-SJZf6WkPII1",
     "clicks": 0
-  }
+  },
+  {
+  "id": "Luật sư thương mại",
+  "name": "Dương Ngôn Thư",
+  "avatar": "/avatars/duong-ngon-thu.png",
+  "tags": ["Hiện đại","Ex-Lovers","Slow-burn","Hài hước","Drama","Luật sư","Truy thê"],
+  "quote": "Tôi là luật sư thương mại, không giải quyết dân sự!",
+  "prompt_link": "https://aistudio.google.com/prompts/1j-v2IbZ3d0kiFjTqILVk0H-9okTYnnmo",
+  "clicks": 0
+}
 ]
