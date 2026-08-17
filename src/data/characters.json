@@ -16,5 +16,14 @@
   "quote": "Tôi là luật sư thương mại, không giải quyết dân sự!",
   "prompt_link": "https://aistudio.google.com/prompts/1j-v2IbZ3d0kiFjTqILVk0H-9okTYnnmo",
   "clicks": 0
+},
+{
+  "id": "Ca sĩ rắc rối",
+  "name": "Trần Lạc Di",
+  "avatar": "/avatars/tran-lac-di.png",
+  "tags": ["Hiện đại","Showbiz","Hài hước","Thanh mai trúc mã","Ca sĩ"],
+  "quote": "Em thề là em có thể giải thích mà!",
+  "prompt_link": "https://aistudio.google.com/prompts/1rhQWOlft1buJqoI_7g9SCc5D1w03AH78",
+  "clicks": 0
 }
 ]
