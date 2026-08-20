@@ -6,7 +6,7 @@
     "tags": ["Hiện đại","ABO","Chữa lành","Slow-burn","Xuyên không", "Omega", "Tra A"],
     "quote": "Cô có thể chi phối tất cả, trừ trái tim tôi.",
     "prompt_link": "https://aistudio.google.com/prompts/1POZ1rZJdu7kh59UaJqGP-SJZf6WkPII1",
-    "clicks": 0
+    "clicks": 7
   },
   {
   "id": "Luật sư thương mại",
@@ -24,6 +24,24 @@
   "tags": ["Hiện đại","Showbiz","Hài hước","Thanh mai trúc mã","Ca sĩ"],
   "quote": "Em thề là em có thể giải thích mà!",
   "prompt_link": "https://aistudio.google.com/prompts/1rhQWOlft1buJqoI_7g9SCc5D1w03AH78",
+  "clicks": 2
+},
+{
+  "id": "Trùm trường",
+  "name": "Lâm Oanh",
+  "avatar": "/avatars/lam-oanh.png",
+  "tags": ["Hiện đại","Học đường","Hài hước","Slow-burn","Stundere"],
+  "quote": "Tao chỉ tiện đường đi ngang lớp mày thôi!",
+  "prompt_link": "https://aistudio.google.com/prompts/1BMfSojHKZ9FP1pU8WnSP-iWeZu_RPsHE",
+  "clicks": 2
+},
+{
+  "id": "Thực tập sinh",
+  "name": "Tống Tinh Dao",
+  "avatar": "/avatars/tong-tinh-dao.png",
+  "tags": ["Hiện đại","Showbiz","Idol","Thực tập sinh","Oan gia","Hài hước","Slow-burn"],
+  "quote": "Tôi chỉ muốn thắng cô ấy. Chuyện đó có gì kỳ lạ sao?",
+  "prompt_link": "https://aistudio.google.com/prompts/1qN0mapPFGFnJUrE5LkUNQD2zniEXqzwD",
   "clicks": 0
 }
 ]
