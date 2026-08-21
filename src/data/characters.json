@@ -6,7 +6,7 @@
     "tags": ["Hiện đại","ABO","Chữa lành","Slow-burn","Xuyên không", "Omega", "Tra A"],
     "quote": "Cô có thể chi phối tất cả, trừ trái tim tôi.",
     "prompt_link": "https://aistudio.google.com/prompts/1POZ1rZJdu7kh59UaJqGP-SJZf6WkPII1",
-    "clicks": 7
+    "clicks": 700
   },
   {
   "id": "Luật sư thương mại",
@@ -24,7 +24,7 @@
   "tags": ["Hiện đại","Showbiz","Hài hước","Thanh mai trúc mã","Ca sĩ"],
   "quote": "Em thề là em có thể giải thích mà!",
   "prompt_link": "https://aistudio.google.com/prompts/1rhQWOlft1buJqoI_7g9SCc5D1w03AH78",
-  "clicks": 2
+  "clicks": 200
 },
 {
   "id": "Trùm trường",
@@ -33,7 +33,7 @@
   "tags": ["Hiện đại","Học đường","Hài hước","Slow-burn","Stundere"],
   "quote": "Tao chỉ tiện đường đi ngang lớp mày thôi!",
   "prompt_link": "https://aistudio.google.com/prompts/1BMfSojHKZ9FP1pU8WnSP-iWeZu_RPsHE",
-  "clicks": 2
+  "clicks": 200
 },
 {
   "id": "Thực tập sinh",
@@ -42,6 +42,15 @@
   "tags": ["Hiện đại","Showbiz","Idol","Thực tập sinh","Oan gia","Hài hước","Slow-burn"],
   "quote": "Tôi chỉ muốn thắng cô ấy. Chuyện đó có gì kỳ lạ sao?",
   "prompt_link": "https://aistudio.google.com/prompts/1qN0mapPFGFnJUrE5LkUNQD2zniEXqzwD",
+  "clicks": 0
+},
+{
+  "id": "Công chúa vong quốc",
+  "name": "Tạ Trường Ly",
+  "avatar": "/avatars/ta-truong-ly.png",
+  "tags": ["Cổ đại", "Kẻ thù", "Công chúa", "Hôn nhân chính trị", "Ngược tâm"],
+  "quote": "Ngài đã lấy đi tất cả của ta. Vậy bây giờ, ngài còn muốn lấy gì nữa?",
+  "prompt_link": "",
   "clicks": 0
 }
 ]
