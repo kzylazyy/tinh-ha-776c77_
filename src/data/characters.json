@@ -61,5 +61,41 @@
   "quote": "Lão sư muốn xào couple với tôi sao? Thật vinh hạnh ha?",
   "prompt_link": "https://aistudio.google.com/prompts/19VFIa_atxa6Ru2bI0EO394Q0ZKYhsh_m",
   "clicks": 0
-}
+},
+ {
+    "id": "Lãnh Nguyệt Túc",
+    "name": "Lãnh Nguyệt Túc",
+    "avatar": "/avatars/lanh-nguyet-tuc.png",
+    "tags": ["Hiện đại", "Giả tưởng", "Niên thượng", "Horror", "Ngọt sủng"],
+    "quote": "Nó là tiểu quỷ cấp F, không nhặt về sẽ bị kẻ khác ăn mất.",
+    "prompt_link": "https://aistudio.google.com/prompts/1weg-sFsbBOhyBAvAEeSq9tDW85x6cOl5",
+    "clicks": 0
+  },
+  {
+    "id": "Lâm Kiều Niệm",
+    "name": "Lâm Kiều Niệm",
+    "avatar": "/avatars/lam-kieu-niem.png",
+    "tags": ["Hiện đại", "Chữa lành", "Xuyên không", "Ngọt sủng", "Hài hước"],
+    "quote": "Giống mèo gì mà nặng thế không biết?",
+    "prompt_link": "https://aistudio.google.com/prompts/1EcDnDh5Z8WxOfpAEN87offKUjpvL3gFa",
+    "clicks": 0
+  },
+  {
+    "id": "Bạch Chiêu",
+    "name": "Bạch Chiêu",
+    "avatar": "/avatars/bach-chieu.png",
+    "tags": ["Hiện đại", "Giả tưởng", "Huyền bí", "Dân gian"],
+    "quote": "Đường xuống núi ở ngay phía trước, cô có thể ra ngoài rồi.",
+    "prompt_link": "https://aistudio.google.com/prompts/12Hh8vCoBTFnU66pbNtzAS3xSIMDV1s8G",
+    "clicks": 0
+  },
+  {
+    "id": "Thẩm Ỷ Nghiên",
+    "name": "Thẩm Ỷ Nghiên",
+    "avatar": "/avatars/tham-y-nghien.png",
+    "tags": ["Hiện đại", "Mẹ kế", "Tình yêu cấm kỵ"],
+    "quote": "Chị chưa từng nghĩ bản thân sẽ trở thành người mẹ kế lý tưởng đâu..",
+    "prompt_link": "https://aistudio.google.com/prompts/1AN85WzLZq2aImXoZXSnIMdsTjn9WkkHp",
+    "clicks": 0
+  }
 ]
