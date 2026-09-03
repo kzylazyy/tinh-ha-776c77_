@@ -1,83 +1,11 @@
 [
   {
-    "id": "Nữ chính nguyên tác",
-    "name": "Tạ Vãn Ninh",
-    "avatar": "/avatars/ta-van-ninh.png",
-    "tags": ["Hiện đại","ABO","Chữa lành","Slow-burn","Xuyên không", "Omega", "Tra A"],
-    "quote": "Cô có thể chi phối tất cả, trừ trái tim tôi.",
-    "prompt_link": "https://aistudio.google.com/prompts/1POZ1rZJdu7kh59UaJqGP-SJZf6WkPII1",
-    "clicks": 700
-  },
-  {
-  "id": "Luật sư thương mại",
-  "name": "Dương Ngôn Thư",
-  "avatar": "/avatars/duong-ngon-thu.png",
-  "tags": ["Hiện đại","Ex-Lovers","Slow-burn","Hài hước","Drama","Luật sư","Truy thê"],
-  "quote": "Tôi là luật sư thương mại, không giải quyết dân sự!",
-  "prompt_link": "https://aistudio.google.com/prompts/1j-v2IbZ3d0kiFjTqILVk0H-9okTYnnmo",
-  "clicks": 0
-},
-{
-  "id": "Ca sĩ rắc rối",
-  "name": "Trần Lạc Di",
-  "avatar": "/avatars/tran-lac-di.png",
-  "tags": ["Hiện đại","Showbiz","Hài hước","Thanh mai trúc mã","Ca sĩ"],
-  "quote": "Em thề là em có thể giải thích mà!",
-  "prompt_link": "https://aistudio.google.com/prompts/1rhQWOlft1buJqoI_7g9SCc5D1w03AH78",
-  "clicks": 200
-},
-{
-  "id": "Trùm trường",
-  "name": "Lâm Oanh",
-  "avatar": "/avatars/lam-oanh.png",
-  "tags": ["Hiện đại","Học đường","Hài hước","Slow-burn","Stundere"],
-  "quote": "Tao chỉ tiện đường đi ngang lớp mày thôi!",
-  "prompt_link": "https://aistudio.google.com/prompts/1BMfSojHKZ9FP1pU8WnSP-iWeZu_RPsHE",
-  "clicks": 200
-},
-{
-  "id": "Thực tập sinh",
-  "name": "Tống Tinh Dao",
-  "avatar": "/avatars/tong-tinh-dao.png",
-  "tags": ["Hiện đại","Showbiz","Idol","Thực tập sinh","Oan gia","Hài hước","Slow-burn"],
-  "quote": "Tôi chỉ muốn thắng cô ấy. Chuyện đó có gì kỳ lạ sao?",
-  "prompt_link": "https://aistudio.google.com/prompts/1qN0mapPFGFnJUrE5LkUNQD2zniEXqzwD",
-  "clicks": 0
-},
-{
-  "id": "Công chúa vong quốc",
-  "name": "Tạ Trường Ly",
-  "avatar": "/avatars/ta-truong-ly.png",
-  "tags": ["Cổ đại", "Kẻ thù", "Công chúa", "Hôn nhân chính trị", "Ngược tâm"],
-  "quote": "Ngài đã lấy đi tất cả của ta. Vậy bây giờ, ngài còn muốn lấy gì nữa?",
-  "prompt_link": "https://aistudio.google.com/prompts/1qi42fJNv5XPd1_7oB4PURnqGltC50u3B",
-  "clicks": 0
-},
-{
-  "id": "Ảnh hậu",
-  "name": "Ứng Tự Thanh",
-  "avatar": "/avatars/ung-tu-thanh.png",
-  "tags": ["Showbiz", "Ảnh hậu", "Ex-lovers", "Gương vỡ lại lành", "Truy thê", "Drama"],
-  "quote": "Lão sư muốn xào couple với tôi sao? Thật vinh hạnh ha?",
-  "prompt_link": "https://aistudio.google.com/prompts/19VFIa_atxa6Ru2bI0EO394Q0ZKYhsh_m",
-  "clicks": 0
-},
- {
-    "id": "Lãnh Nguyệt Túc",
-    "name": "Lãnh Nguyệt Túc",
-    "avatar": "/avatars/lanh-nguyet-tuc.png",
-    "tags": ["Hiện đại", "Giả tưởng", "Niên thượng", "Horror", "Ngọt sủng"],
-    "quote": "Nó là tiểu quỷ cấp F, không nhặt về sẽ bị kẻ khác ăn mất.",
-    "prompt_link": "https://aistudio.google.com/prompts/1weg-sFsbBOhyBAvAEeSq9tDW85x6cOl5",
-    "clicks": 0
-  },
-  {
-    "id": "Lâm Kiều Niệm",
-    "name": "Lâm Kiều Niệm",
-    "avatar": "/avatars/lam-kieu-niem.png",
-    "tags": ["Hiện đại", "Chữa lành", "Xuyên không", "Ngọt sủng", "Hài hước"],
-    "quote": "Giống mèo gì mà nặng thế không biết?",
-    "prompt_link": "https://aistudio.google.com/prompts/1EcDnDh5Z8WxOfpAEN87offKUjpvL3gFa",
+    "id": "Thẩm Ỷ Nghiên",
+    "name": "Thẩm Ỷ Nghiên",
+    "avatar": "/avatars/tham-y-nghien.png",
+    "tags": ["Hiện đại", "Mẹ kế", "Tình yêu cấm kỵ"],
+    "quote": "Chị chưa từng nghĩ bản thân sẽ trở thành người mẹ kế lý tưởng đâu..",
+    "prompt_link": "https://aistudio.google.com/prompts/1AN85WzLZq2aImXoZXSnIMdsTjn9WkkHp",
     "clicks": 0
   },
   {
@@ -90,12 +18,84 @@
     "clicks": 0
   },
   {
-    "id": "Thẩm Ỷ Nghiên",
-    "name": "Thẩm Ỷ Nghiên",
-    "avatar": "/avatars/tham-y-nghien.png",
-    "tags": ["Hiện đại", "Mẹ kế", "Tình yêu cấm kỵ"],
-    "quote": "Chị chưa từng nghĩ bản thân sẽ trở thành người mẹ kế lý tưởng đâu..",
-    "prompt_link": "https://aistudio.google.com/prompts/1AN85WzLZq2aImXoZXSnIMdsTjn9WkkHp",
+    "id": "Lâm Kiều Niệm",
+    "name": "Lâm Kiều Niệm",
+    "avatar": "/avatars/lam-kieu-niem.png",
+    "tags": ["Hiện đại", "Chữa lành", "Xuyên không", "Ngọt sủng", "Hài hước"],
+    "quote": "Giống mèo gì mà nặng thế không biết?",
+    "prompt_link": "https://aistudio.google.com/prompts/1EcDnDh5Z8WxOfpAEN87offKUjpvL3gFa",
     "clicks": 0
+  },
+  {
+    "id": "Lãnh Nguyệt Túc",
+    "name": "Lãnh Nguyệt Túc",
+    "avatar": "/avatars/lanh-nguyet-tuc.png",
+    "tags": ["Hiện đại", "Giả tưởng", "Niên thượng", "Horror", "Ngọt sủng"],
+    "quote": "Nó là tiểu quỷ cấp F, không nhặt về sẽ bị kẻ khác ăn mất.",
+    "prompt_link": "https://aistudio.google.com/prompts/1weg-sFsbBOhyBAvAEeSq9tDW85x6cOl5",
+    "clicks": 0
+  },
+  {
+    "id": "Ảnh hậu",
+    "name": "Ứng Tự Thanh",
+    "avatar": "/avatars/ung-tu-thanh.png",
+    "tags": ["Showbiz", "Ảnh hậu", "Ex-lovers", "Gương vỡ lại lành", "Truy thê", "Drama"],
+    "quote": "Lão sư muốn xào couple với tôi sao? Thật vinh hạnh ha?",
+    "prompt_link": "https://aistudio.google.com/prompts/19VFIa_atxa6Ru2bI0EO394Q0ZKYhsh_m",
+    "clicks": 0
+  },
+  {
+    "id": "Công chúa vong quốc",
+    "name": "Tạ Trường Ly",
+    "avatar": "/avatars/ta-truong-ly.png",
+    "tags": ["Cổ đại", "Kẻ thù", "Công chúa", "Hôn nhân chính trị", "Ngược tâm"],
+    "quote": "Ngài đã lấy đi tất cả của ta. Vậy bây giờ, ngài còn muốn lấy gì nữa?",
+    "prompt_link": "https://aistudio.google.com/prompts/1qi42fJNv5XPd1_7oB4PURnqGltC50u3B",
+    "clicks": 0
+  },
+  {
+    "id": "Thực tập sinh",
+    "name": "Tống Tinh Dao",
+    "avatar": "/avatars/tong-tinh-dao.png",
+    "tags": ["Hiện đại", "Showbiz", "Idol", "Thực tập sinh", "Oan gia", "Hài hước", "Slow-burn"],
+    "quote": "Tôi chỉ muốn thắng cô ấy. Chuyện đó có gì kỳ lạ sao?",
+    "prompt_link": "https://aistudio.google.com/prompts/1qN0mapPFGFnJUrE5LkUNQD2zniEXqzwD",
+    "clicks": 0
+  },
+  {
+    "id": "Trùm trường",
+    "name": "Lâm Oanh",
+    "avatar": "/avatars/lam-oanh.png",
+    "tags": ["Hiện đại", "Học đường", "Hài hước", "Slow-burn", "Stundere"],
+    "quote": "Tao chỉ tiện đường đi ngang lớp mày thôi!",
+    "prompt_link": "https://aistudio.google.com/prompts/1BMfSojHKZ9FP1pU8WnSP-iWeZu_RPsHE",
+    "clicks": 200
+  },
+  {
+    "id": "Ca sĩ rắc rối",
+    "name": "Trần Lạc Di",
+    "avatar": "/avatars/tran-lac-di.png",
+    "tags": ["Hiện đại", "Showbiz", "Hài hước", "Thanh mai trúc mã", "Ca sĩ"],
+    "quote": "Em thề là em có thể giải thích mà!",
+    "prompt_link": "https://aistudio.google.com/prompts/1rhQWOlft1buJqoI_7g9SCc5D1w03AH78",
+    "clicks": 200
+  },
+  {
+    "id": "Luật sư thương mại",
+    "name": "Dương Ngôn Thư",
+    "avatar": "/avatars/duong-ngon-thu.png",
+    "tags": ["Hiện đại", "Ex-Lovers", "Slow-burn", "Hài hước", "Drama", "Luật sư", "Truy thê"],
+    "quote": "Tôi là luật sư thương mại, không giải quyết dân sự!",
+    "prompt_link": "https://aistudio.google.com/prompts/1j-v2IbZ3d0kiFjTqILVk0H-9okTYnnmo",
+    "clicks": 0
+  },
+  {
+    "id": "Nữ chính nguyên tác",
+    "name": "Tạ Vãn Ninh",
+    "avatar": "/avatars/ta-van-ninh.png",
+    "tags": ["Hiện đại", "ABO", "Chữa lành", "Slow-burn", "Xuyên không", "Omega", "Tra A"],
+    "quote": "Cô có thể chi phối tất cả, trừ trái tim tôi.",
+    "prompt_link": "https://aistudio.google.com/prompts/1POZ1rZJdu7kh59UaJqGP-SJZf6WkPII1",
+    "clicks": 700
   }
 ]
