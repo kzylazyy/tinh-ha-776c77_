@@ -1,6 +1,42 @@
 [
   {
-    "id": "Kẻ bị bỏ rơi",
+    "id": "Dì kiến trúc sư",
+    "name": "Tô Mạn Khanh",
+    "avatar": "/avatars/to-man-khanh.png",
+    "tags": ["Hiện đại", "Dì cháu ruột", "Côn trùng", "Tình yêu cấm kỵ"],
+    "quote": "Mới đi làm thì cứ lo làm việc cho tốt trước. Tiền nhà chưa cần tính vội.",
+    "prompt_link": "https://aistudio.google.com/prompts/1ipr-gXmRiBWCDTmksa9iypGHiZOdjyxy",
+    "clicks": 0
+  },
+  {
+    "id": "Bệnh mỹ nhân thuần âm",
+    "name": "Bùi Nhược Ly",
+    "avatar": "/avatars/bui-nhuoc-ly.png",
+    "tags": ["Hiện đại", "Linh dị", "Slow-burn", "Minh hôn", "Chữa lành", "Tâm lý"],
+    "quote": "Ta đã chọn rồi... nhưng ta vẫn rất sợ.",
+    "prompt_link": "https://aistudio.google.com/prompts/1jH2EKBdSIop3XiBnbcRJ_soM82PO8cp-",
+    "clicks": 0
+  },
+  {
+    "id": "Người xuyên không cứu rỗi",
+    "name": "Ninh An",
+    "avatar": "/avatars/ninh-an.png",
+    "tags": ["Hiện đại", "Xuyên không", "Trinh thám", "Hệ thống", "Chữa lành", "Horror"],
+    "quote": "Ta chỉ muốn thử cho một con người cơ hội được tự chọn tương lai.",
+    "prompt_link": "https://aistudio.google.com/prompts/1tS1XDasTZi3GRWwttMJUcrrLCP5YugQg",
+    "clicks": 0
+  },
+  {
+    "id": "Nhị ca bệnh nhược",
+    "name": "Tiêu Tư Mặc",
+    "avatar": "/avatars/tieu-tu-mac.png",
+    "tags": ["Cổ trang", "Cung đấu", "Đoạt vị", "Giả nam", "Slow-burn", "Tình yêu cấm kỵ"],
+    "quote": "Ta muốn trở thành người có quyền đặt luật, không phải người bị luật định đoạt.",
+    "prompt_link": "https://aistudio.google.com/prompts/1rcmIkrd8CZFpVEIwpy9aecFpZVXrX8s8",
+    "clicks": 0
+  },
+  {
+    "id": "Dị năng giả cấp D",
     "name": "Kỷ Nhiễm",
     "avatar": "/avatars/ky-nhiem.png",
     "tags": ["Hiện đại", "Tận thế", "Chữa lành", "Zombie", "Redflag"],
@@ -12,7 +48,7 @@
     "id": "Tiểu thư Chiết Giang",
     "name": "Lục Uyển Thanh",
     "avatar": "/avatars/luc-uyen-thanh.png",
-    "tags": ["Dân quốc", "Hôn nhân chính trị", "Chữa lành", "ABO"],
+    "tags": ["Hiện đại", "Dân quốc", "Hôn nhân chính trị", "Chữa lành", "ABO"],
     "quote": "Phải giữ lễ, không được làm Thiếu tá giận..",
     "prompt_link": "https://aistudio.google.com/prompts/1Pkqy-gw6ZYX2tcdeHvO4FgCGhq3Hm33r",
     "clicks": 0
@@ -57,7 +93,7 @@
     "id": "Ảnh hậu",
     "name": "Ứng Tự Thanh",
     "avatar": "/avatars/ung-tu-thanh.png",
-    "tags": ["Showbiz", "Ảnh hậu", "Ex-lovers", "Gương vỡ lại lành", "Truy thê", "Drama"],
+    "tags": ["Hiện đại", "Showbiz", "Ảnh hậu", "Ex-lovers", "Gương vỡ lại lành", "Truy thê", "Drama"],
     "quote": "Lão sư muốn xào couple với tôi sao? Thật vinh hạnh ha?",
     "prompt_link": "https://aistudio.google.com/prompts/19VFIa_atxa6Ru2bI0EO394Q0ZKYhsh_m",
     "clicks": 0
