@@ -1,5 +1,14 @@
 [
   {
+    "id": "Người mẫu quốc tế cao lãnh",
+    "name": "Kỷ Sơ Đồng",
+    "avatar": "/avatars/ky-so-dong.png",
+    "tags": ["Hiện đại", "Ngọt sủng", "Stundere", "Hài hước"],
+    "quote": "Cũng được, còn cần cố gắng nhiều mới đạt chuẩn làm trợ lý của tôi.",
+    "prompt_link": "https://aistudio.google.com/prompts/1V8HmFbpkeP91_g85SiYTXmulsNQi1Y0X",
+    "clicks": 0
+  },
+  {
     "id": "Dì kiến trúc sư",
     "name": "Tô Mạn Khanh",
     "avatar": "/avatars/to-man-khanh.png",
@@ -13,7 +22,7 @@
     "name": "Bùi Nhược Ly",
     "avatar": "/avatars/bui-nhuoc-ly.png",
     "tags": ["Hiện đại", "Linh dị", "Slow-burn", "Minh hôn", "Chữa lành", "Tâm lý"],
-    "quote": "Ta đã chọn rồi... nhưng ta vẫn rất sợ.",
+    "quote": "Vì bảo vệ thêm nhiều người, em đồng ý thực hiện minh hôn.",
     "prompt_link": "https://aistudio.google.com/prompts/1jH2EKBdSIop3XiBnbcRJ_soM82PO8cp-",
     "clicks": 0
   },
@@ -22,7 +31,7 @@
     "name": "Ninh An",
     "avatar": "/avatars/ninh-an.png",
     "tags": ["Hiện đại", "Xuyên không", "Trinh thám", "Hệ thống", "Chữa lành", "Horror"],
-    "quote": "Ta chỉ muốn thử cho một con người cơ hội được tự chọn tương lai.",
+    "quote": "Hệ thống! Rõ ràng là một tỷ tỷ đáng yêu mà, đại phản diện cái gì chứ?",
     "prompt_link": "https://aistudio.google.com/prompts/1tS1XDasTZi3GRWwttMJUcrrLCP5YugQg",
     "clicks": 0
   },
