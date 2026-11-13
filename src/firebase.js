@@ -2,31 +2,33 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
-// TODO: Thay thế nội dung trong ngoặc kép bằng Config thật của bạn sau này
+// Điền đầy đủ Firebase Web App config lấy từ Firebase Console.
+// Không đưa service-account key hoặc private key vào mã nguồn frontend.
 const firebaseConfig = {
-  apiKey: "ĐIỀN_KHI_CÓ_API_KEY",
+  apiKey: "ĐIỀN_API_KEY",
   authDomain: "tinh-ha-776c77.firebaseapp.com",
   projectId: "tinh-ha-776c77",
   storageBucket: "tinh-ha-776c77.appspot.com",
-  messagingSenderId: "SENDER_ID",
-  appId: "APP_ID"
+  messagingSenderId: "ĐIỀN_SENDER_ID",
+  appId: "ĐIỀN_APP_ID"
 };
 
-let app;
-let db = null;
+const hasValidConfig =
+  firebaseConfig.apiKey !== "ĐIỀN_API_KEY" &&
+  firebaseConfig.messagingSenderId !== "ĐIỀN_SENDER_ID" &&
+  firebaseConfig.appId !== "ĐIỀN_APP_ID";
 
-try {
-  // Kiểm tra xem bạn đã điền key chưa. 
-  // Nếu chưa, web vẫn chạy bằng dữ liệu tĩnh (.json) không báo lỗi.
-  if (firebaseConfig.apiKey !== "ĐIỀN_KHI_CÓ_API_KEY") {
-    app = initializeApp(firebaseConfig);
+let db = null;
+if (hasValidConfig) {
+  try {
+    const app = initializeApp(firebaseConfig);
     db = getFirestore(app);
-    console.log("✦ Đã kết nối với Tinh Hà (Firebase)");
-  } else {
-    console.warn("✦ Chưa kết nối Tinh Hà. Đang chạy dữ liệu tĩnh (Offline Archive).");
+    console.info("✦ Firebase đã được khởi tạo.");
+  } catch (error) {
+    console.error("Không thể khởi tạo Firebase:", error);
   }
-} catch (error) {
-  console.error("Lỗi đài quan sát (Khởi tạo Firebase thất bại):", error);
+} else {
+  console.warn("✦ Firebase chưa có đủ Web App config. Thống kê sẽ chưa hoạt động.");
 }
 
 export { db };

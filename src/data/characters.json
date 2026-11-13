@@ -3,162 +3,348 @@
     "id": "Người mẫu quốc tế cao lãnh",
     "name": "Kỷ Sơ Đồng",
     "avatar": "/avatars/ky-so-dong.png",
-    "tags": ["Hiện đại", "Ngọt sủng", "Stundere", "Hài hước"],
+    "tags": [
+      "Hiện đại",
+      "Ngọt sủng",
+      "Stundere",
+      "Hài hước"
+    ],
     "quote": "Cũng được, còn cần cố gắng nhiều mới đạt chuẩn làm trợ lý của tôi.",
     "prompt_link": "https://aistudio.google.com/prompts/1V8HmFbpkeP91_g85SiYTXmulsNQi1Y0X",
-    "clicks": 0
+    "uid": "ky-so-dong",
+    "status": "published",
+    "stats": {
+      "opens": 0
+    }
   },
   {
     "id": "Dì kiến trúc sư",
     "name": "Tô Mạn Khanh",
     "avatar": "/avatars/to-man-khanh.png",
-    "tags": ["Hiện đại", "Dì cháu ruột", "Côn trùng", "Tình yêu cấm kỵ"],
+    "tags": [
+      "Hiện đại",
+      "Dì cháu ruột",
+      "Côn trùng",
+      "Tình yêu cấm kỵ"
+    ],
     "quote": "Mới đi làm thì cứ lo làm việc cho tốt trước. Tiền nhà chưa cần tính vội.",
     "prompt_link": "https://aistudio.google.com/prompts/1ipr-gXmRiBWCDTmksa9iypGHiZOdjyxy",
-    "clicks": 0
+    "uid": "to-man-khanh",
+    "status": "published",
+    "stats": {
+      "opens": 0
+    }
   },
   {
     "id": "Bệnh mỹ nhân thuần âm",
     "name": "Bùi Nhược Ly",
     "avatar": "/avatars/bui-nhuoc-ly.png",
-    "tags": ["Hiện đại", "Linh dị", "Slow-burn", "Minh hôn", "Chữa lành", "Tâm lý"],
+    "tags": [
+      "Hiện đại",
+      "Linh dị",
+      "Slow-burn",
+      "Minh hôn",
+      "Chữa lành",
+      "Tâm lý"
+    ],
     "quote": "Vì bảo vệ thêm nhiều người, em đồng ý thực hiện minh hôn.",
     "prompt_link": "https://aistudio.google.com/prompts/1jH2EKBdSIop3XiBnbcRJ_soM82PO8cp-",
-    "clicks": 0
+    "uid": "bui-nhuoc-ly",
+    "status": "published",
+    "stats": {
+      "opens": 0
+    }
   },
   {
     "id": "Người xuyên không cứu rỗi",
     "name": "Ninh An",
     "avatar": "/avatars/ninh-an.png",
-    "tags": ["Hiện đại", "Xuyên không", "Trinh thám", "Hệ thống", "Chữa lành", "Horror"],
+    "tags": [
+      "Hiện đại",
+      "Xuyên không",
+      "Trinh thám",
+      "Hệ thống",
+      "Chữa lành",
+      "Horror"
+    ],
     "quote": "Hệ thống! Rõ ràng là một tỷ tỷ đáng yêu mà, đại phản diện cái gì chứ?",
     "prompt_link": "https://aistudio.google.com/prompts/1tS1XDasTZi3GRWwttMJUcrrLCP5YugQg",
-    "clicks": 0
+    "uid": "ninh-an",
+    "status": "published",
+    "stats": {
+      "opens": 0
+    }
   },
   {
     "id": "Nhị ca bệnh nhược",
     "name": "Tiêu Tư Mặc",
     "avatar": "/avatars/tieu-tu-mac.png",
-    "tags": ["Cổ trang", "Cung đấu", "Đoạt vị", "Giả nam", "Slow-burn", "Tình yêu cấm kỵ"],
+    "tags": [
+      "Cổ trang",
+      "Cung đấu",
+      "Đoạt vị",
+      "Giả nam",
+      "Slow-burn",
+      "Tình yêu cấm kỵ"
+    ],
     "quote": "Ta muốn trở thành người có quyền đặt luật, không phải người bị luật định đoạt.",
     "prompt_link": "https://aistudio.google.com/prompts/1rcmIkrd8CZFpVEIwpy9aecFpZVXrX8s8",
-    "clicks": 0
+    "uid": "tieu-tu-mac",
+    "status": "published",
+    "stats": {
+      "opens": 0
+    }
   },
   {
     "id": "Dị năng giả cấp D",
     "name": "Kỷ Nhiễm",
     "avatar": "/avatars/ky-nhiem.png",
-    "tags": ["Hiện đại", "Tận thế", "Chữa lành", "Zombie", "Redflag"],
+    "tags": [
+      "Hiện đại",
+      "Tận thế",
+      "Chữa lành",
+      "Zombie",
+      "Redflag"
+    ],
     "quote": "Lão Zombie, đi xuống dò đường trước dùm cái đi!",
     "prompt_link": "https://aistudio.google.com/prompts/1RdSrGSAe2Tb-DuGYa1Ur4t_Kiuf0N5Zi",
-    "clicks": 0
+    "uid": "ky-nhiem",
+    "status": "published",
+    "stats": {
+      "opens": 0
+    }
   },
   {
     "id": "Tiểu thư Chiết Giang",
     "name": "Lục Uyển Thanh",
     "avatar": "/avatars/luc-uyen-thanh.png",
-    "tags": ["Hiện đại", "Dân quốc", "Hôn nhân chính trị", "Chữa lành", "ABO"],
+    "tags": [
+      "Hiện đại",
+      "Dân quốc",
+      "Hôn nhân chính trị",
+      "Chữa lành",
+      "ABO"
+    ],
     "quote": "Phải giữ lễ, không được làm Thiếu tá giận..",
     "prompt_link": "https://aistudio.google.com/prompts/1Pkqy-gw6ZYX2tcdeHvO4FgCGhq3Hm33r",
-    "clicks": 0
+    "uid": "luc-uyen-thanh",
+    "status": "published",
+    "stats": {
+      "opens": 0
+    }
   },
   {
     "id": "Mẹ kế tương lai",
     "name": "Thẩm Ỷ Nghiên",
     "avatar": "/avatars/tham-y-nghien.png",
-    "tags": ["Hiện đại", "Mẹ kế", "Tình yêu cấm kỵ"],
+    "tags": [
+      "Hiện đại",
+      "Mẹ kế",
+      "Tình yêu cấm kỵ"
+    ],
     "quote": "Chị chưa từng nghĩ bản thân sẽ trở thành người mẹ kế lý tưởng đâu..",
     "prompt_link": "https://aistudio.google.com/prompts/1AN85WzLZq2aImXoZXSnIMdsTjn9WkkHp",
-    "clicks": 0
+    "uid": "tham-y-nghien",
+    "status": "published",
+    "stats": {
+      "opens": 0
+    }
   },
   {
     "id": "Sơn thần",
     "name": "Bạch Chiêu",
     "avatar": "/avatars/bach-chieu.png",
-    "tags": ["Hiện đại", "Giả tưởng", "Huyền bí", "Dân gian"],
+    "tags": [
+      "Hiện đại",
+      "Giả tưởng",
+      "Huyền bí",
+      "Dân gian"
+    ],
     "quote": "Đường xuống núi ở ngay phía trước, cô có thể ra ngoài rồi.",
     "prompt_link": "https://aistudio.google.com/prompts/12Hh8vCoBTFnU66pbNtzAS3xSIMDV1s8G",
-    "clicks": 0
+    "uid": "bach-chieu",
+    "status": "published",
+    "stats": {
+      "opens": 0
+    }
   },
   {
     "id": "Nữ phản diện",
     "name": "Lâm Kiều Niệm",
     "avatar": "/avatars/lam-kieu-niem.png",
-    "tags": ["Hiện đại", "Chữa lành", "Xuyên không", "Ngọt sủng", "Hài hước"],
+    "tags": [
+      "Hiện đại",
+      "Chữa lành",
+      "Xuyên không",
+      "Ngọt sủng",
+      "Hài hước"
+    ],
     "quote": "Giống mèo gì mà nặng thế không biết?",
     "prompt_link": "https://aistudio.google.com/prompts/1EcDnDh5Z8WxOfpAEN87offKUjpvL3gFa",
-    "clicks": 0
+    "uid": "lam-kieu-niem",
+    "status": "published",
+    "stats": {
+      "opens": 0
+    }
   },
   {
     "id": "Quỷ nhân viên biên chế",
     "name": "Lãnh Nguyệt Túc",
     "avatar": "/avatars/lanh-nguyet-tuc.png",
-    "tags": ["Hiện đại", "Giả tưởng", "Niên thượng", "Horror", "Ngọt sủng"],
+    "tags": [
+      "Hiện đại",
+      "Giả tưởng",
+      "Niên thượng",
+      "Horror",
+      "Ngọt sủng"
+    ],
     "quote": "Nó là tiểu quỷ cấp F, không nhặt về sẽ bị kẻ khác ăn mất.",
     "prompt_link": "https://aistudio.google.com/prompts/1weg-sFsbBOhyBAvAEeSq9tDW85x6cOl5",
-    "clicks": 0
+    "uid": "lanh-nguyet-tuc",
+    "status": "published",
+    "stats": {
+      "opens": 0
+    }
   },
   {
     "id": "Ảnh hậu",
     "name": "Ứng Tự Thanh",
     "avatar": "/avatars/ung-tu-thanh.png",
-    "tags": ["Hiện đại", "Showbiz", "Ảnh hậu", "Ex-lovers", "Gương vỡ lại lành", "Truy thê", "Drama"],
+    "tags": [
+      "Hiện đại",
+      "Showbiz",
+      "Ảnh hậu",
+      "Ex-lovers",
+      "Gương vỡ lại lành",
+      "Truy thê",
+      "Drama"
+    ],
     "quote": "Lão sư muốn xào couple với tôi sao? Thật vinh hạnh ha?",
     "prompt_link": "https://aistudio.google.com/prompts/19VFIa_atxa6Ru2bI0EO394Q0ZKYhsh_m",
-    "clicks": 0
+    "uid": "ung-tu-thanh",
+    "status": "published",
+    "stats": {
+      "opens": 0
+    }
   },
   {
     "id": "Công chúa vong quốc",
     "name": "Tạ Trường Ly",
     "avatar": "/avatars/ta-truong-ly.png",
-    "tags": ["Cổ đại", "Kẻ thù", "Công chúa", "Hôn nhân chính trị", "Ngược tâm"],
+    "tags": [
+      "Cổ đại",
+      "Kẻ thù",
+      "Công chúa",
+      "Hôn nhân chính trị",
+      "Ngược tâm"
+    ],
     "quote": "Ngài đã lấy đi tất cả của ta. Vậy bây giờ, ngài còn muốn lấy gì nữa?",
     "prompt_link": "https://aistudio.google.com/prompts/1qi42fJNv5XPd1_7oB4PURnqGltC50u3B",
-    "clicks": 0
+    "uid": "ta-truong-ly",
+    "status": "published",
+    "stats": {
+      "opens": 0
+    }
   },
   {
     "id": "Thực tập sinh",
     "name": "Tống Tinh Dao",
     "avatar": "/avatars/tong-tinh-dao.png",
-    "tags": ["Hiện đại", "Showbiz", "Idol", "Thực tập sinh", "Oan gia", "Hài hước", "Slow-burn"],
+    "tags": [
+      "Hiện đại",
+      "Showbiz",
+      "Idol",
+      "Thực tập sinh",
+      "Oan gia",
+      "Hài hước",
+      "Slow-burn"
+    ],
     "quote": "Tôi chỉ muốn thắng cô ấy. Chuyện đó có gì kỳ lạ sao?",
     "prompt_link": "https://aistudio.google.com/prompts/1qN0mapPFGFnJUrE5LkUNQD2zniEXqzwD",
-    "clicks": 0
+    "uid": "tong-tinh-dao",
+    "status": "published",
+    "stats": {
+      "opens": 0
+    }
   },
   {
     "id": "Trùm trường",
     "name": "Lâm Oanh",
     "avatar": "/avatars/lam-oanh.png",
-    "tags": ["Hiện đại", "Học đường", "Hài hước", "Slow-burn", "Stundere"],
+    "tags": [
+      "Hiện đại",
+      "Học đường",
+      "Hài hước",
+      "Slow-burn",
+      "Stundere"
+    ],
     "quote": "Tao chỉ tiện đường đi ngang lớp mày thôi!",
     "prompt_link": "https://aistudio.google.com/prompts/1BMfSojHKZ9FP1pU8WnSP-iWeZu_RPsHE",
-    "clicks": 200
+    "uid": "lam-oanh",
+    "status": "published",
+    "stats": {
+      "opens": 0
+    }
   },
   {
     "id": "Ca sĩ rắc rối",
     "name": "Trần Lạc Di",
     "avatar": "/avatars/tran-lac-di.png",
-    "tags": ["Hiện đại", "Showbiz", "Hài hước", "Thanh mai trúc mã", "Ca sĩ"],
+    "tags": [
+      "Hiện đại",
+      "Showbiz",
+      "Hài hước",
+      "Thanh mai trúc mã",
+      "Ca sĩ"
+    ],
     "quote": "Em thề là em có thể giải thích mà!",
     "prompt_link": "https://aistudio.google.com/prompts/1rhQWOlft1buJqoI_7g9SCc5D1w03AH78",
-    "clicks": 200
+    "uid": "tran-lac-di",
+    "status": "published",
+    "stats": {
+      "opens": 0
+    }
   },
   {
     "id": "Luật sư thương mại",
     "name": "Dương Ngôn Thư",
     "avatar": "/avatars/duong-ngon-thu.png",
-    "tags": ["Hiện đại", "Ex-Lovers", "Slow-burn", "Hài hước", "Drama", "Luật sư", "Truy thê"],
+    "tags": [
+      "Hiện đại",
+      "Ex-Lovers",
+      "Slow-burn",
+      "Hài hước",
+      "Drama",
+      "Luật sư",
+      "Truy thê"
+    ],
     "quote": "Tôi là luật sư thương mại, không giải quyết dân sự!",
     "prompt_link": "https://aistudio.google.com/prompts/1j-v2IbZ3d0kiFjTqILVk0H-9okTYnnmo",
-    "clicks": 0
+    "uid": "duong-ngon-thu",
+    "status": "published",
+    "stats": {
+      "opens": 0
+    }
   },
   {
     "id": "Nữ chính nguyên tác",
     "name": "Tạ Vãn Ninh",
     "avatar": "/avatars/ta-van-ninh.png",
-    "tags": ["Hiện đại", "ABO", "Chữa lành", "Slow-burn", "Xuyên không", "Omega", "Tra A"],
+    "tags": [
+      "Hiện đại",
+      "ABO",
+      "Chữa lành",
+      "Slow-burn",
+      "Xuyên không",
+      "Omega",
+      "Tra A"
+    ],
     "quote": "Cô có thể chi phối tất cả, trừ trái tim tôi.",
     "prompt_link": "https://aistudio.google.com/prompts/1POZ1rZJdu7kh59UaJqGP-SJZf6WkPII1",
-    "clicks": 700
+    "uid": "ta-van-ninh",
+    "status": "published",
+    "stats": {
+      "opens": 0
+    }
   }
 ]

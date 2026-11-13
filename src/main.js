@@ -5,7 +5,7 @@ import { FeaturedSection } from './components/FeaturedSection.js';
 import { SearchFilter } from './components/SearchFilter.js';
 import { CharacterCard } from './components/CharacterCard.js';
 import initialCharacters from './data/characters.json';
-import './utils/tracker.js';
+import { startStatsListener } from './utils/tracker.js';
 import { inject } from '@vercel/analytics';
 
 inject();
@@ -295,14 +295,11 @@ window.resetSearch = function() {
 // Chọn ngẫu nhiên 1 nhân vật trong toàn bộ thư viện và mở đúng theo logic mở nhân vật hiện có
 window.pickRandomCharacter = function() {
   if (!characters.length) return;
-  const randomChar = characters[Math.floor(Math.random() * characters.length)];
-
-  if (randomChar.prompt_link && randomChar.prompt_link !== '#') {
-    window.open(randomChar.prompt_link, '_blank');
-  }
-  if (typeof window.trackClick === 'function') {
-    window.trackClick(randomChar.id);
-  }
+  const availableChars = characters.filter(char => char.status !== 'upcoming' && char.prompt_link && char.prompt_link !== '#');
+  if (!availableChars.length) return;
+  const selected = availableChars[Math.floor(Math.random() * availableChars.length)];
+  window.open(selected.prompt_link, '_blank', 'noopener,noreferrer');
+  if (typeof window.trackOpen === 'function') window.trackOpen(selected.uid);
 };
 
 window.handleSearch = function(value) {
@@ -357,6 +354,7 @@ function initApp() {
       <section class="text-center" style="padding: 2.5rem 0 1rem 0;">
         <h1 class="hero-title font-serif">TINH HÀ 776C77</h1>
         <p class="font-serif" style="color: var(--text-muted); font-style: italic; font-size: 0.95rem; margin-top: 0.35rem;">"Nơi những vì sao được lưu giữ."</p>
+        <p id="total-opens" style="font-size:.75rem;color:var(--text-muted);margin-top:.65rem;">✦ Tổng lượt mở: đang tải...</p>
       </section>
 
       <!-- Khu vực Nhân vật tiêu biểu -->
@@ -389,6 +387,14 @@ function initApp() {
 
   initTheme();
   renderLibrary();
+  startStatsListener(characters, ({ total, byCharacter }) => {
+    window.characterOpenCounts = byCharacter;
+    const totalEl = document.getElementById('total-opens');
+    if (totalEl) totalEl.textContent = total === null
+      ? '✦ Thống kê chưa kết nối'
+      : `✦ Tổng lượt mở: ${total.toLocaleString('vi-VN')}`;
+    renderLibrary();
+  });
 }
 
 document.addEventListener('DOMContentLoaded', initApp);

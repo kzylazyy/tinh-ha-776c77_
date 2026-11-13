@@ -1,42 +1,70 @@
 // src/utils/tracker.js
 import { db } from '../firebase.js';
-// Bạn cần cài đặt thư viện firebase: npm install firebase
-import { doc, updateDoc, increment } from "firebase/firestore"; 
+import {
+  collection,
+  doc,
+  increment,
+  onSnapshot,
+  setDoc
+} from 'firebase/firestore';
 
-// 1. Ghi nhận lượt nhấp (Mở link)
-window.trackClick = async function(charId) {
-  try {
-    // Nếu chưa cấu hình Firebase, chỉ in ra console
-    if (!db) {
-      console.log(`[Offline Mode] Đã nhấp vào vì sao: ${charId}`);
-      return;
+let unsubscribeStats = null;
+
+/**
+ * Theo dõi thống kê mở prompt từ Firestore.
+ * Mỗi document trong collection "characters" có ID là uid của nhân vật.
+ */
+export function startStatsListener(characters, onStatsUpdate = () => {}) {
+  if (!db) {
+    onStatsUpdate({ total: null, byCharacter: {} });
+    return () => {};
+  }
+
+  if (unsubscribeStats) unsubscribeStats();
+
+  unsubscribeStats = onSnapshot(
+    collection(db, 'characters'),
+    (snapshot) => {
+      const byCharacter = {};
+      let total = 0;
+      snapshot.forEach((item) => {
+        const opens = Number(item.data().opens) || 0;
+        byCharacter[item.id] = opens;
+        total += opens;
+      });
+      onStatsUpdate({ total, byCharacter });
+    },
+    (error) => {
+      console.error('Không thể tải thống kê lượt mở:', error);
+      onStatsUpdate({ total: null, byCharacter: {} });
     }
+  );
 
-    // Kết nối đến document của char đó trên Firebase và cộng thêm 1
-    const charRef = doc(db, "characters", charId);
-    await updateDoc(charRef, {
-      likes: increment(1) // Bạn có thể dùng trường 'likes' hoặc 'clicks'
-    });
-    
-    console.log(`Đã ghi nhận 1 tương tác cho vì sao: ${charId}`);
+  return unsubscribeStats;
+}
+
+/** Ghi nhận đúng một lượt khi người dùng mở prompt. */
+window.trackOpen = async function(uid) {
+  if (!uid || !db) {
+    if (!db) console.warn('Chưa kết nối Firebase: lượt mở chưa được lưu.');
+    return;
+  }
+
+  try {
+    // setDoc + increment tạo document nếu chưa tồn tại và cộng nguyên tử nếu đã có.
+    await setDoc(doc(db, 'characters', uid), { opens: increment(1) }, { merge: true });
   } catch (error) {
-    console.error("Nhiễu sóng tín hiệu (Lỗi Firebase):", error);
+    console.error('Không thể ghi nhận lượt mở:', error);
   }
 };
 
-// 2. Ghi nhận lượt Copy
-window.copyPrompt = function(charId) {
-  // Lấy link hiện tại và đính kèm ID nhân vật
-  const url = window.location.origin + window.location.pathname + `?char=${charId}`;
-  
-  // Lưu vào Clipboard (bộ nhớ tạm) của người dùng
-  navigator.clipboard.writeText(url).then(() => {
-    // Thông báo cực kỳ nhỏ gọn, không dùng alert quá to
-    console.log(`Đã sao chép tín hiệu vì sao: ${charId}`);
-    
-    // (Tùy chọn) Gọi hàm trackClick để tăng số đếm copy
-    // trackClick(charId);
-  }).catch(err => {
-    console.error("Không thể sao chép:", err);
-  });
+// Sao chép đường dẫn trang nhân vật; thao tác này không cộng lượt mở prompt.
+window.copyPrompt = async function(uid) {
+  const url = `${window.location.origin}${window.location.pathname}?char=${encodeURIComponent(uid)}`;
+  try {
+    await navigator.clipboard.writeText(url);
+    console.info(`Đã sao chép liên kết nhân vật: ${uid}`);
+  } catch (error) {
+    console.error('Không thể sao chép:', error);
+  }
 };
