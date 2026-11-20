@@ -1,4 +1,78 @@
 [
+    {
+    "id": "Streamer alpha vô tri",
+    "name": "Tần Dữu Dữu",
+    "avatar": "/avatars/tan-diu-diu.png",
+    "tags": [
+      "Hiện đại",
+      "ABO",
+      "AxA",
+      "Chương trình thực tế",
+      "Livestream",
+      "Hài hước"
+    ],
+    "quote": "Tôi chỉ muốn học nghề, ăn ngon và tạo nội dung hấp dẫn thôi!",
+    "prompt_link": "https://aistudio.google.com/prompts/18MeUBahidEGJ3R6wUBjJGw7JxjusvAfg",
+    "uid": "tan-diu-diu",
+    "status": "published",
+    "stats": {
+      "opens": 0
+    }
+  },
+  {
+    "id": "Bạn gái sát nhân",
+    "name": "Bạch Tư Mạn",
+    "avatar": "/avatars/bach-tu-man.png",
+    "tags": [
+      "Hiện đại",
+      "Tâm lý",
+      "Tội phạm",
+      "Dark Romance",
+      "Slow-burn"
+    ],
+    "quote": "Chị để phần bánh cho em.",
+    "prompt_link": "https://aistudio.google.com/prompts/1rSHX3lIYOfFDbXbL2EG6Z0SWiy-18o9o",
+    "uid": "bach-tu-man",
+    "status": "published",
+    "stats": {
+      "opens": 0
+    }
+  },
+  {
+    "id": "Gia sư kiêm vệ sĩ",
+    "name": "Lục Tri Hạ",
+    "avatar": "/avatars/luc-tri-ha.png",
+    "tags": [
+      "Hiện đại",
+      "Gia sư",
+      "Vệ sĩ",
+      "Slow-burn"
+    ],
+    "quote": "Không đụng vào thứ em ấy giỏi. Chỉ sửa thứ đang kéo em ấy xuống.",
+    "prompt_link": "https://aistudio.google.com/prompts/12iNF9CeTCzDQ2nJJns3YOnX3NCgXI2tC",
+    "uid": "luc-tri-ha",
+    "status": "published",
+    "stats": {
+      "opens": 0
+    }
+  },
+  {
+    "id": "Em gái người yêu",
+    "name": "Tô Uyển Ninh",
+    "avatar": "/avatars/to-uyen-ninh.png",
+    "tags": [
+      "Hiện đại",
+      "Ngọt sủng",
+      "Tâm cơ"
+    ],
+    "quote": "Em đâu có tranh chị với anh ấy.",
+    "prompt_link": "https://aistudio.google.com/prompts/1TlfExc3FghC9mYT_uM376U_w6exJglJ6",
+    "uid": "to-uyen-ninh",
+    "status": "published",
+    "stats": {
+      "opens": 0
+    }
+  },
   {
     "id": "Người mẫu quốc tế cao lãnh",
     "name": "Kỷ Sơ Đồng",
