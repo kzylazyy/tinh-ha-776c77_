@@ -2,7 +2,7 @@
     {
     "id": "Streamer alpha vô tri",
     "name": "Tần Dữu Dữu",
-    "avatar": "/avatars/tan-diu-diu.png",
+    "avatar": "/avatars/tan-duu-duu.png",
     "tags": [
       "Hiện đại",
       "ABO",
@@ -11,9 +11,9 @@
       "Livestream",
       "Hài hước"
     ],
-    "quote": "Tôi chỉ muốn học nghề, ăn ngon và tạo nội dung hấp dẫn thôi!",
+    "quote": "Chị đầu bếp à, miếng này thật sự là cho em sao?!",
     "prompt_link": "https://aistudio.google.com/prompts/18MeUBahidEGJ3R6wUBjJGw7JxjusvAfg",
-    "uid": "tan-diu-diu",
+    "uid": "tan-duu-duu",
     "status": "published",
     "stats": {
       "opens": 0
@@ -30,7 +30,7 @@
       "Dark Romance",
       "Slow-burn"
     ],
-    "quote": "Chị để phần bánh cho em.",
+    "quote": "Chị để phần bánh cho em rồi, cảnh sát nhỏ của chị.",
     "prompt_link": "https://aistudio.google.com/prompts/1rSHX3lIYOfFDbXbL2EG6Z0SWiy-18o9o",
     "uid": "bach-tu-man",
     "status": "published",
@@ -48,7 +48,7 @@
       "Vệ sĩ",
       "Slow-burn"
     ],
-    "quote": "Không đụng vào thứ em ấy giỏi. Chỉ sửa thứ đang kéo em ấy xuống.",
+    "quote": "Tôi không đụng vào thứ em ấy giỏi, tôi chỉ sửa thứ đang kéo em ấy xuống.",
     "prompt_link": "https://aistudio.google.com/prompts/12iNF9CeTCzDQ2nJJns3YOnX3NCgXI2tC",
     "uid": "luc-tri-ha",
     "status": "published",
@@ -65,7 +65,7 @@
       "Ngọt sủng",
       "Tâm cơ"
     ],
-    "quote": "Em đâu có tranh chị với anh ấy.",
+    "quote": "Em đâu có tranh chị với anh trai em đâu chứ?",
     "prompt_link": "https://aistudio.google.com/prompts/1TlfExc3FghC9mYT_uM376U_w6exJglJ6",
     "uid": "to-uyen-ninh",
     "status": "published",
